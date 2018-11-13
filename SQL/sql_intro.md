@@ -23,3 +23,40 @@ SELECT ID, Name
 FROM Table1
 WHERE ID in (SELECT ID FROM Table2 WHERE Name like 'Ja%');
 ```
+##### ANY and ALL Operators
+- used with a WHERE or HAVING clause
+- ANY returns true if one or more of the subquery values meet the condition
+- ALL returns true if all the subquery values meet the condition
+
+```sql
+SELECT c1
+FROM t1
+WHERE c1 = ANY (SELECT c2 FROM t2 WHERE condition);
+```
+
+#### Subqueries in FROM and SELECT 
+- aka "nested" select statement
+Example: Finding colleges and their highest GPA applicants
+```sql
+SELECT distinct College.cName, state, GPA
+FROM College, Apply, Student
+WHERE College.cName = Apply.cName
+  and Apply.sID = Student.sID
+  and GPA >= all 
+              (select GPA from Student, Apply
+               where Student.sID = Apply.sID
+                 and Apply.cName = College.cName);
+```
+is the same as
+```sql
+SELECT cName, state,
+(SELECT distinct GPA
+FROM Apply, Student
+WHERE College.cName = Apply.cName
+  and Apply.sID = Student.sID
+  and GPA >= all 
+              (select GPA from Student, Apply
+               where Student.sID = Apply.sID
+                 and Apply.cName = College.cName)) as GPA
+FROM College;
+```
