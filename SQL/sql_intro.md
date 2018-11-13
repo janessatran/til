@@ -12,10 +12,10 @@ WHERE condition
 Note: can apply join condition in where clause (R1.id = R2.id) 
 
 #### Set Operators
--**UNION*: used to join to tables/relations; by default eliminiates duplicates in result
--**UNION ALL*: used to join to tables/relations; multi-set operator, does not delete duplicates and sort
--**INTERSECT*: used to combine two select statements, but returns rows only from first select statement that are indentical to row in the second select statement
--**EXCEPT*: returns all records from first select statement that are not in the second select statement
+- **UNION**: used to join to tables/relations; by default eliminiates duplicates in result
+- **UNION ALL**: used to join to tables/relations; multi-set operator, does not delete duplicates and sort
+- **INTERSECT**: used to combine two select statements, but returns rows only from first select statement that are indentical to row in the second select statement
+- **EXCEPT**: returns all records from first select statement that are not in the second select statement
 
 #### Subqueries in WHERE Clause
 ```sql
