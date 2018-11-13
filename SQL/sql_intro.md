@@ -60,3 +60,9 @@ WHERE College.cName = Apply.cName
                  and Apply.cName = College.cName)) as GPA
 FROM College;
 ```
+
+#### JOINS
+- **INNER JOIN** on condition: cross product that satisifies condition 
+- **NATURAL JOIN**: equates columns across tables of the same name 
+- **INNER JOIN** (using attrs): like natural join, but explicitly list attributes to be equated
+- **LEFT | RIGHT | FULL OUTER JOIN**: similar to cross product on condition, but when results don't meet condition they  are still added  
