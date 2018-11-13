@@ -65,4 +65,6 @@ FROM College;
 - **INNER JOIN** on condition: cross product that satisifies condition 
 - **NATURAL JOIN**: equates columns across tables of the same name 
 - **INNER JOIN** (using attrs): like natural join, but explicitly list attributes to be equated
-- **LEFT | RIGHT | FULL OUTER JOIN**: similar to cross product on condition, but when results don't meet condition they  are still added  
+- **LEFT | RIGHT | FULL OUTER JOIN**: similar to cross product on condition, but when results don't meet condition they  are still added to the result and padded with null values. 
+  - outer joins are not associate, but full outer join is commutatitve
+  
