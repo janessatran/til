@@ -36,6 +36,7 @@ WHERE c1 = ANY (SELECT c2 FROM t2 WHERE condition);
 
 #### Subqueries in FROM and SELECT 
 - aka "nested" select statement
+- can use to refer to subquery as table in a from clause
 Example: Finding colleges and their highest GPA applicants
 ```sql
 SELECT distinct College.cName, state, GPA
@@ -68,3 +69,11 @@ FROM College;
 - **LEFT | RIGHT | FULL OUTER JOIN**: similar to cross product on condition, but when results don't meet condition they  are still added to the result and padded with null values. 
   - outer joins are not associate, but full outer join is commutatitve
   
+#### Aggregate Functions
+- **AVG**: calculates the average of a set of values
+- **COUNT**: counts rows in a specified table or view
+- **MIN**: gets min value in set of values
+- **MAX**: gets max value in set of values
+- **SUM**: calculates sum of values
+- **HAVING**: used to apply aggregate condition on set; applied after group by clause
+
