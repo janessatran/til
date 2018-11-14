@@ -77,3 +77,30 @@ FROM College;
 - **SUM**: calculates sum of values
 - **HAVING**: used to apply aggregate condition on set; applied after group by clause
 
+#### Data Modification
+Inserting new data can be done the following ways:
+```sql
+INSERT INTO Table VALUES(A1, A2, ..., An)
+```
+or
+```sql
+INSERT INTO Table SELECT-STATEMENT
+```
+
+Deleting data:
+```sql
+DELETE FROM Table WHERE Condition
+```
+
+Updating data:
+```sql
+UPDATE Table
+SET attr = expression
+WHERE condition
+```
+or
+```sql
+UPDATE Table
+SET A1 = expr1, A2 = expr2, ..., An = exprn
+WHERE condition
+```
