@@ -2,7 +2,7 @@
 
 #### Design "anomalies" 
 Anomalies are inconvenient or error-prone situations arising when we process tables in a databse.                                                                                                
-- **insert anomal                                                                                                 
+- **insert anomaly**: occurs when certain attributes in the database can't be inserted without the existence of other attributes.
 - **update anomaly**: exists when one or more instances of duplicated data is updated, but not all.
 - **delete anomaly**: exists when certain attributes are lost because of the deletion of other attributes.
 
