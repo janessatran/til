@@ -6,3 +6,4 @@ Inspired by [botanical](https://github.com/botanical). Just keeping track of thi
 
 ### Databases
 - [Relational Design Theory](https://github.com/janessatran/til/blob/master/Databases/relational_design_theory.md)
+- [Using FDs to find Keys](https://github.com/janessatran/til/blob/master/Databases/keys_using_fd.md)
