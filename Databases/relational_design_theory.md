@@ -62,3 +62,12 @@ Output: decomposition of R into BCNF relations with "lossless join"
   - Compute FDs for R1 and R2 (implied functional dependencies using closure)
   - Copmute keys for R1 and R2
 
+### Multivalued Dependencies and Fourth Normal Form
+- multi-valued dependencies lead to unnecessary repetition of data and other anomalies
+- A table is in fourth normal form (4NF), if and only if for every one of its non-trivial multivalued dependencies ```X -> Y```, X is a superkey, that is, X is either a candidate key or a supserset thereof. 
+
+How to know if there is a multi-valued dependency: 
+1. For a dependency ```A -> B```, if for a single value of A, multipel values of B exists, then the table may have multi-valued dependency
+2. Also, a table should at least 3 columns for it to have a multi-valued dependency
+3. And, for a relation ```R(A,B,C)```, if there is a multi-valued dependency between A and B, then B and C should be indpendent of each other.
+If all these conditions are true for any relation (table), it is said to have multi-valued dependency.
