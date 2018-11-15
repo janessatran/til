@@ -57,7 +57,7 @@ Input: relation R + FDs for R
 Output: decomposition of R into BCNF relations with "lossless join"
 - Compute keys for R
 - Repeat until all relations are in BCNF:
-  - Pick any R' with ```A -> B``` that violates BCNF (no primary key on left hand side0
+  - Pick any R' with ```A -> B``` that violates BCNF (no primary key on left hand side)
   - Decompose R' into ```R1(A, B) and R2(A, rest)```
   - Compute FDs for R1 and R2 (implied functional dependencies using closure)
   - Copmute keys for R1 and R2
@@ -71,3 +71,18 @@ How to know if there is a multi-valued dependency:
 2. Also, a table should at least 3 columns for it to have a multi-valued dependency
 3. And, for a relation ```R(A,B,C)```, if there is a multi-valued dependency between A and B, then B and C should be indpendent of each other.
 If all these conditions are true for any relation (table), it is said to have multi-valued dependency.
+
+#### 4NF decomposition algorithm
+Relation R with MVDs is in 4NF if: 
+- for each nontrivial ```A ->-> B```, A is a key
+
+Input: relation R + FDs for R + MVDs for R
+Output: Decomposition of R into 4NF relations with "lossless join"
+- Compute keys for R
+- Repeat until all relations are in 4NF:
+  - Pick any R' with ```A ->-> B``` that violates 4NF
+  - Decompose R' into ```R1(A, B) and R2(A, rest)```
+  - Compute FDs and MVDs for R1 and R2 (implied functional dependencies using closure)
+  - Copmute keys for R1 and R20
+  
+Fourth normal form is a stronger property than BCNF
