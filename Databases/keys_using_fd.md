@@ -15,3 +15,5 @@ Given ```R(A,B,C,D)``` and FDs ```AB -> C, C -> B, C -> D```, find the keys.
 
 Check ```A+ = {A}``` from reflexivity, doesnt include all attributes, not primary key.
 Check ```AB+ = {ABCD}```, includes all attributes- primary key! 
+
+If all the attributes end up in the middle, we have to find the closure of diff. permutations of those keys and check which includes all attributes in relation. 
