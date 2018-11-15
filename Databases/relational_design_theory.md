@@ -24,4 +24,17 @@ In the examples below, A is the determinant (left side) and B is the dependent (
 
 #### Rules for FDs
 - **axiom of reflexivity**: If Y is a subset of X, then X determines Y 
+
 ![equation](https://latex.codecogs.com/gif.latex?%5Ctext%20if%20%5C%3B%20Y%20%5Csubseteq%20X%2C%20%5Ctext%20then%20%5C%3B%20X%20%5Crightarrow%20Y)
+
+- **axiom of augementation**: if X determines Y, then XZ determines YZ for any Z
+  - says that every non-key attribute must be fully dependent on the primary key 
+
+![equation](https://latex.codecogs.com/gif.latex?%5Ctext%20if%20%5C%3B%20X%20%5Crightarrow%20Y%2C%20%5Ctext%20then%20%5C%3B%20XZ%20%5Ctext%20%5C%3B%20for%20%5C%3A%20any%20%5C%3B%20Z)
+
+- **axiom of transitivity**: if X determines Y, and Y determines Z, then X must also determine Z
+
+![equation](https://latex.codecogs.com/gif.latex?%5Ctext%20if%20%5C%3B%20X%20%5Crightarrow%20Y%20%5C%3B%20%5Ctext%20and%20%5C%3B%20Y%20%5Crightarrow%20Z%2C%20%5C%3B%20%5Ctext%20then%20%5C%3B%20X%20%5Crightarrow%20Z)
+
+- **Union**: this rule suggests that if two tables ar eseparate, and the primary key is the same, you may want to consider putting them together
+- **Decomposition**: reverse of the union rule, if you have a table that appears to contain two entites that are determined by the same Primary Key, consider breaking them up into two tables 
