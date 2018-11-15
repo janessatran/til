@@ -1,4 +1,4 @@
-#### Using Functional Dependencies to Find Keys 
+## Using Functional Dependencies to Find Keys 
 - Create a chart of items that appear on the left-hand, middle, or right-hand side of the functional dependency. 
 - If an attribute only occurs on the left-hand side, it must be part of the key
 - If an attribute only occurs on the right-hand side, it is not a part of any key
