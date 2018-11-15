@@ -57,8 +57,8 @@ Input: relation R + FDs for R
 Output: decomposition of R into BCNF relations with "lossless join"
 - Compute keys for R
 - Repeat until all relations are in BCNF:
-  - Pick any R' with ```A -> B``` that violates BCNF
+  - Pick any R' with ```A -> B``` that violates BCNF (no primary key on left hand side0
   - Decompose R' into ```R1(A, B) and R2(A, rest)```
-  - Computer FDs for R1 and R2
+  - Compute FDs for R1 and R2 (implied functional dependencies using closure)
   - Copmute keys for R1 and R2
 
