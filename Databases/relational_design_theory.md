@@ -41,3 +41,24 @@ In the examples below, A is the determinant (left side) and B is the dependent (
 #### Additional rules to help
 - **Union**: this rule suggests that if two tables ar eseparate, and the primary key is the same, you may want to consider putting them together
 - **Decomposition**: reverse of the union rule, if you have a table that appears to contain two entites that are determined by the same Primary Key, consider breaking them up into two tables 
+
+### Boyce-Codd Normal Form
+AKA "good" relations..
+
+If a relational schema is in BCNF, then all redudancy based on FD has been removed, although other types of redundancy may still exist. A relational schema R is in Boyce-Codd Normal form if and if only for every one of its dependencies ```X -> Y```, at least one of the following conditions hold:
+```
+ X -> Y is a trivial functional dependency (Y subset of X)
+    X is a superkey for schema R (left hand side of functional dependency is a key) 
+```
+Ask: Does every functional dependency have a key on the left-hand side? 
+
+#### BCNF decomposition algorithm
+Input: relation R + FDs for R
+Output: decomposition of R into BCNF relations with "lossless join"
+- Compute keys for R
+- Repeat until all relations are in BCNF:
+  - Pick any R' with ```A -> B``` that violates BCNF
+  - Decompose R' into ```R1(A, B) and R2(A, rest)```
+  - Computer FDs for R1 and R2
+  - Copmute keys for R1 and R2
+
