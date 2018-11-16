@@ -1,3 +1,4 @@
+
 ## Indexes and Transactions
 
 ### Indexes
@@ -38,3 +39,9 @@ CREATE INDEX IndexName ON T(A1, A2, ..., An)
 CREATE UNIQUE INDEX IndexName on T(A)
 DROP INDEX IndexName
 ```
+
+### Transactions
+Motivated by two independent requirements:
+- concurrent database access
+- resilience to system failures
+![alt text](https://github.com/janessatran/til/blob/master/Databases/img/database%20structure.PNG "db")
