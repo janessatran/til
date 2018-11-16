@@ -76,10 +76,6 @@ A set of properties you should apply when modifying a database.
 - **consistency**: you guarantee that your data will be consistent, none of the constraints you have on related data will ever be violated.
 - **isolation**: one transaction cannot read data from another transaction that is not yet completed. If two transactions are executing concurrently, each one will see the world as if they were executing sequentially, and if one needs to read data that is written by another, it will have to wait unti lthe other is finished.
   - **serializability**: opeartions may be interleaved, but execution must be equivalent to some sequential (serial) order of all transactions 
-  - there are different isolation levels:
-    - per transaction and "in the eye of the beholder" 
-    - levels are "read uncommitted", "read committed", "repeatable read"
-    - **dirty data item**: written by an uncommitted transaction 
 - **durability**: once a transaction is complete, it is guaranteed that all of the changes have been recorded to a durable medium (such as a hard disk) and the fact that the trasaction has been compelted is likewise recorded; if system crashses after transaction commits, all effects of transaction remain in database. Protocols based on the property of "logging" used to ensure this. 
 
 
@@ -92,3 +88,50 @@ SQL commands based on input
                               # if no confirmation made (or not done in timely manner)
 If ans = 'ok' Then Commit; Else Rollback;
 ```
+### Isolation Levels
+- there are different isolation levels:
+- per transaction and "in the eye of the beholder" 
+- levels are "read uncommitted", "read committed", "repeatable read"
+  - **read uncommitted**: a transaction may perform dirty reads
+  - **read committed**: a transaction may not perform dirty reads; still does not guarantee global serializability 
+  - **repeatable read**: a transaction nmay not perform dirty reads; an item read multiple times cannot change value
+    - **phantom read**: occurs when, in the course of a transaction, two identical queries are executed and the collection of rows returned by the second query is different from the first
+    - can occur with inserts into table, because values are not inserted with locks (unlike reads) 
+- **dirty data item**: written by an uncommitted transaction 
+
+### EXAMPLES
+
+#### Read Uncommitted
+```
+Consider a table R(A) containing {(1),(2)}. T1 is "update R set A = 2*A" and T2 is "select avg(A) from R". 
+If T2 executes using "read uncommitted", what are the possible values it returns?
+
+ANSWER: 1.5, 2, 2.5, 3
+```
+
+**Explanation**: The update command in T1 can update the values in either order, and the select command in T2 can compute the average at any point before, between, or after the updates.
+
+#### Read Committed
+```
+R(A) = {(1),(2)}, S(B) = {(1),(2)}
+T1 -> update R set A = 2*!; update S set B = 2*B
+T2 -> select avg(A) from R; select avg(B) from S
+
+If T2 executes "read committed" is it possible for T2 to return two diff values?
+
+ANSWER: Yes
+```
+
+**Explanation**: T2 could return avg(A) computed before T1 and avg(B) computed after T1
+
+#### Repeatable Read
+```
+R(A) = {(1),(2)}
+T1 -> update R set A = 2*!; insert into R values (6)
+T2 -> select avg(A) from R; select avg(A) from R
+If T2 executes using "repeatable read", what are the possible values returned by its SECOND statement?
+
+ANSWER: 1.5, 4
+```
+**Explanation**: T2 must (appear to) execute entirely before or after T1. You might think T2 could (appear to) execute between T1's two statements since the second statement is an insert, but that would be allowing dirty reads.
+
