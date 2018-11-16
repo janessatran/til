@@ -90,6 +90,7 @@ If ans = 'ok' Then Commit; Else Rollback;
 - there are different isolation levels:
 - per transaction and "in the eye of the beholder" 
 - levels are "read uncommitted", "read committed", "repeatable read"
+- **dirty read**: a dirty read (aka uncommitted dependency) occurs when a transaction is allowed to read data from a row that has been modified by another running transaction and not yet committed.
   - **read uncommitted**: a transaction may perform dirty reads
   - **read committed**: a transaction may not perform dirty reads; still does not guarantee global serializability 
   - **repeatable read**: a transaction nmay not perform dirty reads; an item read multiple times cannot change value
