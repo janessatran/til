@@ -26,3 +26,27 @@ results in:
 Levels: Male Female
 [1] TRUE
 ```
+
+Other notes about factors:
+- R treats text columns in dataframes as categorical data and factors it automatically
+- the order of levels can be changed by applying the factor function again with the new order of the levels
+
+Example:
+```r
+# Create vector as input, Create factors
+data <- c("Male", "Female", "Female", "Male")
+factor_data <- factor(data)
+print(factor_data)
+
+# Apply factor function with required order of level
+new_order_data <- factor(factor_data, levels = c("Female", "Male"))
+print(new_order_data)
+```
+
+results in:
+```r
+[1] Male Female Female Male
+Levels: Male Female
+[1] Male Female Female Male
+Levels: Female Male
+```
