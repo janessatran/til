@@ -1,7 +1,6 @@
 
 ## Indexes and Transactions
-
-### Indexes
+## Indexes
 - **indexes/indices**: primary mechanism to get improved performance on database
   - utility in the difference between full table scans and immediate location of tuples (orders of magnitude performance difference)
   - underlying data structures: 
@@ -40,7 +39,7 @@ CREATE UNIQUE INDEX IndexName on T(A)
 DROP INDEX IndexName
 ```
 
-### Transactions
+## Transactions
 Motivated by two independent requirements:
 - concurrent database access
 - resilience to system failures
