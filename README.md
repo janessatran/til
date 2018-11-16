@@ -7,3 +7,7 @@ Inspired by [botanical](https://github.com/botanical). Just keeping track of thi
 ### Databases
 - [Relational Design Theory](https://github.com/janessatran/til/blob/master/Databases/relational_design_theory.md)
 - [Using FDs to find Keys](https://github.com/janessatran/til/blob/master/Databases/keys_using_fd.md)
+
+### R Programming 
+- [Data Structures](https://github.com/janessatran/til/blob/master/R/data_structures.md)
+- [Relational Operators](https://github.com/janessatran/til/blob/master/R/relational_operators.md)
