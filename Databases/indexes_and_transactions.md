@@ -44,8 +44,6 @@ Motivated by two independent requirements:
 - concurrent database access
 - resilience to system failures
 
-![alt text](https://github.com/janessatran/til/blob/master/Databases/img/database%20structure.PNG "db")
-
 #### Levels of inconsistency with concurrent access: 
 Databases use the get -> modify -> put sequence of actions
 - **attribute-level**: 2 clients updating attribute with different values, can result in multiple diff. values if there is interleaving 
@@ -137,3 +135,9 @@ ANSWER: 1.5, 4
 
 ### Isolation Levels Summary
 ![alt text](https://github.com/janessatran/til/blob/master/Databases/img/isolation_levels.PNG)
+
+- standard default: serializable
+- weaker isolation levels
+  - increased concurrency + decreaesd overhead = increased performance
+  - weaker consistency guarantees
+  - some systems have default Repeatable Read
