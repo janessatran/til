@@ -44,4 +44,31 @@ DROP INDEX IndexName
 Motivated by two independent requirements:
 - concurrent database access
 - resilience to system failures
+
 ![alt text](https://github.com/janessatran/til/blob/master/Databases/img/database%20structure.PNG "db")
+
+#### Levels of inconsistency with concurrent access: 
+Databases use the get -> modify -> put sequence of actions
+- **attribute-level**: 2 clients updating attribute with different values, can result in multiple diff. values if there is interleaving 
+- **tuple-level**: 2 clients issuing statements that modify diff attribute for same record, if performed interleaved, both changes will or one of the two changes may occur 
+- **table-level**: 2 clients submitting statements, one using a table query as a condition at the same time the second client modifies that table
+- **multi-statement**: 2 clients, first client moving records from one table to another and deleting first table, second client counting number of rows in tables; second client may be counting duplicates
+
+Concurrency Goal: execute sequence of SQL statements so they appear to be running in isolation 
+- solution: execute statements in isolation
+- still want to enable concurrency when safe to do so (multiprocessor, multithreaded, asynchronous I/O)
+System-Failure Goal: gaurantee all-or-nothing execution, regardless of failures
+
+
+#### Transactions are a solution for both concurrency and failures. 
+- **transaction**: a sequence of one or more SQL operations treated as a unit
+  - transactions appear to run in isoloation
+  - if the system fails, each transaction's changes are reflected either entirely or not at all
+  
+#### SQL Standard:
+- begins automatically on first SQL statement
+- on "commit" transaction ends and new one begins
+- current transaction ends on session termination
+- "autocommit" turns each statement into transaction
+
+
