@@ -135,3 +135,5 @@ ANSWER: 1.5, 4
 ```
 **Explanation**: T2 must (appear to) execute entirely before or after T1. You might think T2 could (appear to) execute between T1's two statements since the second statement is an insert, but that would be allowing dirty reads.
 
+### Isolation Levels Summary
+![alt text](https://github.com/janessatran/til/blob/master/Databases/img/isolation_levels.PNG)
