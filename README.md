@@ -12,4 +12,4 @@ Inspired by [botanical](https://github.com/botanical). Just keeping track of thi
 
 ### R Programming 
 - [Data Structures](https://github.com/janessatran/til/blob/master/R/data_structures.md)
-- [Relational Operators](https://github.com/janessatran/til/blob/master/R/relational_operators.md)
+- [Operators](https://github.com/janessatran/til/blob/master/R/operators.md)
