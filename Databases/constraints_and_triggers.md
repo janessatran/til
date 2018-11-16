@@ -56,6 +56,12 @@ create table Student(sID int, sName text, GPA real check(GPA is not null), sizeH
 create table Apply(sID int, cName text, major text, decision text, 
                     check(sID in (select sID from Student)));
 ```
+#### General Assertions
+Can refer to any number of tables in the database, not table specific. 
+```sql
+create assertion Key
+check ((select count(distinct A) from T) = (select count(*) from T)));
+```
 
 Note:
 - diff between `unique` and `primary key`: The UNIQUE constraint uniquely identifies each record in a database table. The UNIQUE and PRIMARY KEY constraints both provide a guarantee for uniqueness for a column or set of columns. ... Primary key can't be null but unique constraint is nullable
