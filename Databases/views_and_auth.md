@@ -72,3 +72,42 @@ Where C.cName = A.cName and S.sID = A.sID
 And C.state = 'Ca' and A.major = 'CS'
 ```
 - modifications to base data invalidate view (inserts, deletes, updates)
+
+Efficiency benefits of a materialized view depend on:
+- size of data
+- complexity of view
+- number of queries using view
+- number of modifications affecting view
+  - "incremental maintenance" vs full recomputation
+  
+### Updating views
+In order to be updatable according to the SQL standard, a view must:
+
+1. Have only one table T in its top-level FROM clause
+2. Not use SELECT DISTINCT in its top-level FROM clause
+3. Include all attributes from T that do not permit NULLs
+4. Not refer to T in subqueries
+5. Not use GROUP BY or aggregation
+  
+## Authorization 
+- make sure users see only data they're supposed to see
+- guard database against modifications by malicious users
+- users have privileges; can only operate on data for which they are authorized
+  - READ, WRITE, DELETE privleges
+- can authorize privleges on tables and views
+  - Note: all views are not updatabale, including views with aggregations
+
+### Obtaining privleges
+- relation creator is owner
+- owner has all privleges and may grant privileges
+
+```sql
+GRANT pivs ON R TO users
+[ with grant option]
+
+REVOKE privs ON R FROM users
+[ CASCADE | RESTRICT ]
+```
+
+- **cascade**: also revoke privleges granted from privileges being revoked (transitively), unless also granted from another source
+- **restrict**: disallow if cascade would revoke any other privileges
