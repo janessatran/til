@@ -1,4 +1,4 @@
-Datatables from [here]().
+Datatables from [here](https://github.com/janessatran/til/blob/master/SQL/socialdata.html).
 
 1. Write a trigger that makes new students named 'Friendly' automatically like everyone else in their grade. That is, after the trigger runs, we should have ('Friendly', A) in the Likes table for every other Highschooler A in the same grade as 'Friendly'.
 ```sql
