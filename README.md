@@ -3,6 +3,7 @@ Inspired by [botanical](https://github.com/botanical). Just keeping track of thi
 
 ### SQL
 - [Intro to SQL](https://github.com/janessatran/til/blob/master/SQL/sql_intro.md)
+- [Creating triggers (exercises)](https://github.com/janessatran/til/blob/master/SQL/triggers_exercises.md)
 
 ### Databases
 - [Relational Design Theory](https://github.com/janessatran/til/blob/master/Databases/relational_design_theory.md)
