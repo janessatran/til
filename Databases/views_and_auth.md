@@ -60,3 +60,15 @@ from Apply
 where major = 'CS' and decision = 'Y'
 with check option;
 ```
+
+#### Materialized views
+- In computing, a materialized view is a database object that contains the results of a query. For example, it may be a local copy of data located remotely, or may be a subset of the rows and/or columns of a table or join result, or may be a summary using an aggregate function.
+
+```sql
+Create Materialized View CA-CS As
+Select C.cName, S.sName
+From College C, Student S, Apply A
+Where C.cName = A.cName and S.sID = A.sID
+And C.state = 'Ca' and A.major = 'CS'
+```
+- modifications to base data invalidate view (inserts, deletes, updates)
