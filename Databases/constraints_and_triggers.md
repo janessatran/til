@@ -56,6 +56,22 @@ create table Student(sID int, sName text, GPA real check(GPA is not null), sizeH
 create table Apply(sID int, cName text, major text, decision text, 
                     check(sID in (select sID from Student)));
 ```
+#### Notes
+- integrity of references; no "dangling pointers" 
+- referential integrity from R(A) to S(B) -> each value in column A of table R must appear in column B of table S
+- A is called the "foregin key" 
+- B is usually required to be the primary key for table S
+
+Modifying tables with referential integrity constraints:
+- Delete from S
+  - Resterict (default): throws an error and doesn't allow modification
+  - SET NULL: if tuple deleted in reference table, take referencing tuples and replace values with NULL
+  - Cascade: if tupled deleted, delete any other tuple with referencing value
+- Update S.B
+  - Resterict (default): throws an error and doesn't allow modification
+  - SET NULL: if tuple updated in reference table, take referencing tuples and replace values with NULL
+  - Cascade: if tupled updated, update any other tuple with referencing value
+  
 #### General Assertions
 Can refer to any number of tables in the database, not table specific. 
 ```sql
@@ -86,3 +102,4 @@ Before | After | Instead of events
 when (condition)
 action
 ```
+
