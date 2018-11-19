@@ -94,6 +94,7 @@ Examples:
 - if insert application with GPA > 3.95 -> accept application 
 - update size HS to be > 7,000 -> change
 
+SQL Standard syntax
 ```sql
 Create Trigger name
 Before | After | Instead of events
@@ -101,5 +102,48 @@ Before | After | Instead of events
 [for each row]
 when (condition)
 action
+
+-- Events:
+insert on T
+delete on T
+update on T
+
+-- Referencing variables: 
+old row as var
+new row as var
+old table as var
+new table as var
 ```
 
+Example:
+- implement referential integrity 
+- R.A references S.B, cascaded delete
+
+Row level:
+```sql
+Create Trigger Cascade
+After Delete On S
+Referencing Old Row as O
+For Each Row
+[ no condition ]
+Delete From R Where A = O.B
+```
+
+Statement level:
+```sql
+Create Trigger Cascade
+After Delete On S
+Referencing Old Table as OT
+[ For Each Row ]
+[ no condition ]
+Delete From R Where A in (Select B From OT)
+```
+
+Tricky Issues:
+- row level vs statement level
+  - new/old row and new/old table
+  - before, instead of
+- multiple triggers activated at same time (which goes first?)
+- trigger actions activating other triggers (chaining)
+  - also self-triggering, cycles, nested invocations
+- conditions in when vs as part of action 
