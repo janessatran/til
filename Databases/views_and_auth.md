@@ -11,6 +11,13 @@
 ```sql
 CREATE VIEW vName AS <Query>
 ```
+example:
+```sql
+create view CSaccept as 
+select sID, cName
+from Apply
+where major = 'CS' and decision = 'Y';
+```
 
 ### Querying views
 - once V defined, can reference V like any table
@@ -38,3 +45,18 @@ BEGIN
   [modification statement on basetable];
 END;
   ```
+#### Automatic view modifications
+Restrictions in SQL standard for "updatable views"
+1. ```SELECT``` (no DISTINCT) on single table T
+2. Attributes not in view can be NULL or have default values
+3. Subqueries must not refer to T
+4. No ```GROUP BY``` or aggregation
+
+- can use ```with check option```; when the system automatically performs a translation, it actually checks to make sure that the translation properly inserted the data into the view
+```sql
+create view CSaccept as 
+select sID, cName
+from Apply
+where major = 'CS' and decision = 'Y'
+with check option;
+```
