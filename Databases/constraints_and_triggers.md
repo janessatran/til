@@ -94,7 +94,7 @@ Examples:
 - if insert application with GPA > 3.95 -> accept application 
 - update size HS to be > 7,000 -> change
 
-SQL Standard syntax
+#### SQL Standard syntax
 ```sql
 Create Trigger name
 Before | After | Instead of events
@@ -139,7 +139,7 @@ Referencing Old Table as OT
 Delete From R Where A in (Select B From OT)
 ```
 
-Tricky Issues:
+#### Tricky Issues:
 - row level vs statement level
   - new/old row and new/old table
   - before, instead of
@@ -147,3 +147,23 @@ Tricky Issues:
 - trigger actions activating other triggers (chaining)
   - also self-triggering, cycles, nested invocations
 - conditions in when vs as part of action 
+
+#### Features of an SQL Trigger:
+- the check of the ```condition``` and ```action``` may be executed on the state of the database ***before*** the tirgerring event is executed, or that state that exists ***after*** the event is executed
+- possible to limit update events to a certain attribute or set of attributes
+- a trigger  may execute once for each modified tuple (row-level trigger) or once for all tuples that are changed by an SQL statement (statement-level trigger)
+
+Example Trigger: [source](http://teaching.csse.uwa.edu.au/units/CITS2232/lectures/db-triggers.pdf)
+- trigger designed to foil (by undiong) any update on an attribute (netWorth) with a lower value
+```sql
+CREATE TRIGGER NetWorthTrigger
+AFTER UPDATE of netWorth on MovieExec
+REFERENCING
+OLD ROW as OldTuple,
+NEW ROW as NewTuple
+FOR EACH ROW
+WHEN (OldTuple.netWorth > NewTuple.netWorth)
+UPDATE MovieExec
+SET netWorth = OldTuple.netWorth
+WHERE cert = NewTuple.cert;
+```
