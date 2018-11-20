@@ -13,6 +13,8 @@
 - **objects**: sets of label-value pairs; enclosed in curly brackets {}
 - **arrays**: lists of values; enclosed in straight brackets []
 
+Note: A JSON array is a comma-separated, [] enclosed list of JSON values. Values can be numbers, quoted strings, true, false, null, objects, or arrays. Objects and arrays may be empty. Objects must be a set of label-value pairs.
+
 ### Relational Model vs JSON
 
 |                 | Relational   | JSON  | 
