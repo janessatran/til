@@ -22,6 +22,7 @@
 
 ### XML vs JSON
 - both good for semi-structured data
+
 |                 | XML   | JSON  | 
 |-----------------|--------------|------------|
 | Verbosity       | More  | Less  | 
