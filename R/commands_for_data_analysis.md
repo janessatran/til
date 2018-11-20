@@ -36,3 +36,6 @@ Example: Using mpg data, plot points (x,y) with x as `displ` or engine size, y a
 ggplot(data = mpg) + 
   geom_point(mapping = aes(x = displ, y = hwy))
 ```
+
+### Getting statistics
+- use ```summary(df)``` to get summary statistics on dataset
