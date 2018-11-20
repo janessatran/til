@@ -12,6 +12,7 @@ Inspired by [botanical](https://github.com/botanical). Just keeping track of thi
 - [Indexes and Transactions](https://github.com/janessatran/til/blob/master/Databases/indexes_and_transactions.md)
 - [Constraints and Triggers](https://github.com/janessatran/til/blob/master/Databases/constraints_and_triggers.md)
 - [Views and Authorization](https://github.com/janessatran/til/blob/master/Databases/views_and_auth.md)
+- [JSON Data](https://github.com/janessatran/til/blob/master/Databases/json_data.md)
 
 ### R Programming 
 - [Data Structures](https://github.com/janessatran/til/blob/master/R/data_structures.md)
