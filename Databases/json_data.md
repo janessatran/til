@@ -3,7 +3,10 @@
 - alternative to relation model that is appropriate for semi-structured data
 - stands for JavaScript Object Notation 
 - standard for "serializing" data objects, usually in files 
-- human-readable, useful for data interchange 
+- human-readable, useful for data interchange
+- **JSON Schema**: JSON Schema is a powerful tool for validating the structure of JSON data
+  - constrains things, but can add new properties into data and it is still valid
+  - to cancel this behavior, "additionalProperties":false will make it so additional properties are invalid
 
 ### Basic constructs (recursive)
 - **base values**: number, string, boolean
