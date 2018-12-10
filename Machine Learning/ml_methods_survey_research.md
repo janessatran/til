@@ -75,12 +75,14 @@ Example: suppose a researcher wants to predict survey participation based on age
 
 ## Using LASSO to Model Interactions and Nonlinearities in Survey Data
 source: [https://www.surveypractice.org/article/2716-using-lasso-to-model-interactions-and-nonlinearities-in-survey-data](https://www.surveypractice.org/article/2716-using-lasso-to-model-interactions-and-nonlinearities-in-survey-data)
-* **LASSO**: Least Absolute Shrinkage and Selection Operator; a method that can be applied to Ordinary Least Squares or Logisitc Regression problems, among others, where there may be a relationship between the outcome and predictor variables. 
+* **LASSO**: Least Absolute Shrinkage and Selection Operator
 * Applies shrinkage factors to regression coefficients to perform **feature selection** and optimze the form of regression model more efficientily
 * Good for "sparse data" situations (many predictors available, but only a few are assumed ot be related to dependent variable) 
  * e.g. Using census block group data + address-based samples to predict likelihood of survey response
 * Can be used for both categorical and continuous data with a mix of predictor types
 * LASSO shrinks the magnitude of cofficients to zero (to eliminate regressors)- nonzero coefficients are estimated for true predictors, zero coefficients are deemed irrelevant 
+
+Summary: Lasso regression analysis is a shrinkage and variable selection method for linear regression models. The goal of lasso regression is to obtain the subset of predictors that minimizes prediction error for a quantitative response variable. The lasso does this by imposing a constraint on the model parameters that causes regression coefficients for some variables to shrink toward zero. Variables with a regression coefficient equal to zero after the shrinkage process are excluded from the model. Variables with non-zero regression coefficients variables are most strongly associated with the response variable. Explanatory variables can be either quantitative, categorical or both.
 
 ### LASSO Advantages and Disadvantages
 | Advantages  	|  Disadvantages 	|
