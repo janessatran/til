@@ -72,3 +72,20 @@ Example: suppose a researcher wants to predict survey participation based on age
 |Perform well even when there are a large number of predictors and a small number of cases in the dataset.   	| For nonlinear applications, user must select kernel to be used by the SVM. Choice of kernel and any associate hyperparameters is essential- incorrect choice can negiatively affect performance.  	|
 | SVMs can adapt to nonlinear decision/classification boundaries.  	|  SVMs can seem like black boxes in that a final funcitonal form or table of coefficients for various predictors is not provided as part of estimation. 	|
 | Because they are constructed using only the support vectors, they may ave better classfication performance when applied to data that are unbalanced with respect to the binary outcome.  	|   	|
+
+## Using LASSO to Model Interactions and Nonlinearities in Survey Data
+source: [https://www.surveypractice.org/article/2716-using-lasso-to-model-interactions-and-nonlinearities-in-survey-data](https://www.surveypractice.org/article/2716-using-lasso-to-model-interactions-and-nonlinearities-in-survey-data)
+* **LASSO**: Least Absolute Shrinkage and Selection Operator; a method that can be applied to Ordinary Least Squares or Logisitc Regression problems, among others, where there may be a relationship between the outcome and predictor variables. 
+* Applies shrinkage factors to regression coefficients to perform **feature selection** and optimze the form of regression model more efficientily
+* Good for "sparse data" situations (many predictors available, but only a few are assumed ot be related to dependent variable) 
+ * e.g. Using census block group data + address-based samples to predict likelihood of survey response
+* Can be used for both categorical and continuous data with a mix of predictor types
+* LASSO shrinks the magnitude of cofficients to zero (to eliminate regressors)- nonzero coefficients are estimated for true predictors, zero coefficients are deemed irrelevant 
+
+### LASSO Advantages and Disadvantages
+| Advantages  	|  Disadvantages 	|
+|---	|---	|
+| Implicit variable selection from coefficient shrinkage; good for sparse data scenarios  	|  Does not provide estimates of uncertainty when run once; to obtain measures of uncertaintiy, need to bootstrap or estimate a Bayesian LASSO. 	|
+| Unlike stepwise regression models that include or exclude a variable or variables at each step, LASSO-based methods estimate a single model.  	|  In some situations, LASSO may not be consistent. Need ALASSO for consistency. 	|
+| ALASSO models have "oracle property" combining consistency and efficiency  	| LASSO-based methods have difficulty differentiating relevant and irrelevant predictors when predictors themselves are highly correlated.  	|
+|   	| Under certain basis expansions, LASSO-based model can be computationally intensive and require more time than traditional approaches.  	|
