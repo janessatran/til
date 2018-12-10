@@ -64,3 +64,11 @@ Example: suppose a researcher wants to predict survey participation based on age
   * large penalties C (small allowances T), lead to smaller margins
   * smaller penalties C (large allowances T), lead to larger margins, but also more misclassfications in the training data 
   * penalty C / allowance T usually set through k-fold cross-validation 
+
+### SVM Advantages and Disadvantages
+|  Advantages 	|  Disadvantages 	|
+|---	|---	|
+| Robust to obserations that are far away from hyperplane and are efficient since they are based only on support vectors within hyperplane.   	|  Copmutationally intensive and require large amount of memory to perform estimation, especially if data sets are large. 	|
+|Perform well even when there are a large number of predictors and a small number of cases in the dataset.   	| For nonlinear applications, user must select kernel to be used by the SVM. Choice of kernel and any associate hyperparameters is essential- incorrect choice can negiatively affect performance.  	|
+| SVMs can adapt to nonlinear decision/classification boundaries.  	|  SVMs can seem like black boxes in that a final funcitonal form or table of coefficients for various predictors is not provided as part of estimation. 	|
+| Because they are constructed using only the support vectors, they may ave better classfication performance when applied to data that are unbalanced with respect to the binary outcome.  	|   	|
