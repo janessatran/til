@@ -18,3 +18,6 @@ Inspired by [botanical](https://github.com/botanical). Just keeping track of thi
 - [Data Structures](https://github.com/janessatran/til/blob/master/R/data_structures.md)
 - [Operators](https://github.com/janessatran/til/blob/master/R/operators.md)
 - [Commands for Data Analysis](https://github.com/janessatran/til/blob/master/R/commands_for_data_analysis.md)
+
+### Machine Learning
+- [ML Methods for Survey Researchers](https://github.com/janessatran/til/blob/master/Machine%20Learning/ml_methods_survey_research.md)
