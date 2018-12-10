@@ -28,3 +28,27 @@ Measures area underneath the ROC Curve
   *	It is **scale-invariant**: it measures how well predictions are ranked, rather than their absolute values
   *	It is **classification-threshold-invariant**: it measures the quality of the model’s predictions irrespective of what classification threshold is chosen
     *	Not so great in cases where there are wide disparities in the cost of false negatives vs false positives (e.g. when doing email spam detection, you likely want to prioritize minimizing false positives even if that results in significant increase of false negatives) 
+
+## Using Support Vector Machines for Survey Research
+Source: [https://www.surveypractice.org/article/2715-using-support-vector-machines-for-survey-research](https://www.surveypractice.org/article/2715-using-support-vector-machines-for-survey-research)
+
+*	**Support Vector Machines (SVM)**: classify binary outcomes (e.g. survey responses vs nonresponse) by estimating a separation boundary within space defined by set of predictor variables
+*	In the simplest case, SVMs create a **“maximal margin”** in the predictor space – the largest buffer separating observations for one outcome from those of the other outcome
+ *	Cases that fall exactly on the margin are called support vectors because these specific cases alone define the unique boundary solution
+*	If there are two predictor vars, the separating boundary is a line
+ *	Three -> a plane
+ *	More than three -> separating hyperplane
+*	Predictors are obtained from SVMs by using the corresponding decision function that is a mathematical depiction of the boundary
+
+Example: suppose a researcher wants to predict survey participation based on age (X1) and income (X2)
+*	Possible labels: survey respondents (red triangles) and survey non-respondents (blue circles)
+*	Optimal hyperplane (aka boundary) separating respondents from non-respondents is line labeled H (this is the simplest case)
+*	Classification boundary is “optimal” in that it minimizes the classification error in the training data set
+* The maximal margin classifier finds the maximal margins, such that the resulting separating hyperplane H is farthest from the training observations among all such hyperplanes 
+*	Observations lying along the margin are called support vectors
+*	Once the boundary (H) has been estimated, one can apply it to training, test, or new data for forecasting. 
+
+### Differences in SVM classifiers:
+1.	How to deal with classification errors
+2.	Weather the decision boundary H is a linear versus nonlinear function of the predictors 
+
