@@ -47,8 +47,20 @@ Example: suppose a researcher wants to predict survey participation based on age
 * The maximal margin classifier finds the maximal margins, such that the resulting separating hyperplane H is farthest from the training observations among all such hyperplanes 
 *	Observations lying along the margin are called support vectors
 *	Once the boundary (H) has been estimated, one can apply it to training, test, or new data for forecasting. 
+<img src="https://s3.amazonaws.com/production.scholastica/attachment/9153/large/merged_scatter_plots.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAI7SMXV4JOVMX437Q%2F20181210%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20181210T162027Z&X-Amz-Expires=10000&X-Amz-SignedHeaders=host&X-Amz-Signature=6d193dd46876004749f1221711d20c573e1eb4563385442c1646ccfee7e337a2">
+
 
 ### Differences in SVM classifiers:
 1.	How to deal with classification errors
 2.	Weather the decision boundary H is a linear versus nonlinear function of the predictors 
 
+* most often, the decision boundary is nonlinear
+ * can use a **soft margin** classifier, which allows for 
+  1. observations that are correctly classified but lie between M and H
+  2. misclassified observations
+ * soft margin classfiers use slack variables which keep track of the margin error for each observation
+ * to find the optimal boundary H for soft margin classifiers, we need to maximize the margin while also specifiying a constraint on total error T that will be allowed 
+  * for optimization, can also use penalty C
+  * large penalties C (small allowances T), lead to smaller margins
+  * smaller penalties C (large allowances T), lead to larger margins, but also more misclassfications in the training data 
+  * penalty C / allowance T usually set through k-fold cross-validation 
