@@ -21,7 +21,7 @@ Measures area underneath the ROC Curve
 *	It can be interpreted as the probability that the model ranks a random positive example more highly than a random negative example
 *	For example, given the following results which are arranged from left to right in ascending order of logistic regression predictions, AUC represents the probability that a random positive (green) example is positioned to the right of a random negative (red) example 
 
-[img]()
+<img src="https://developers.google.com/machine-learning/crash-course/images/AUCPredictionsRanked.svg">
 
 * AUC ranges in values from 0 to 1, a model whose predictions are 100% wrong has an AUC of 0.0, while a model whose predictions are 100% correct has an AUC of 1.0
 * It is desirable as a measure of accuracy for the following reasons: 	
