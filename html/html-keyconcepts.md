@@ -1,4 +1,5 @@
 # HTML Key Concepts
+### My notes from Codeacademy's learn HTML course
 
 *Document type declaration:*
 - the document type declaration `<!DOCTYPE html> is required as the first line of an HTML document
@@ -30,6 +31,16 @@
 - the `target` attribute on an anchor `<a>` element specifies where a hyperlink should be opened
 - for exaxmple, a `target` value of `"_blank"` will tell the browser to open the hyperlink in a new tab in modern browsers, or in a new window in older browsers, or if the browser has had settings changed to open hyperlinks in a new window
   
+*File paths:*
+- URL paths in HTML can be absolute paths or a relative path
+- absolute: full path
+- relative: links to a local file in the same folder or on the same server
+  - relative paths begin with `./` followed by a path to a local file
+  - `./` tells your browser to look for the file path from the current folder
+  
+*HTML anchor tags:*
+- HTML anchor `<a>` tags can surround hyperlink content to a specified url
+- they can be applied to many different kinds of content, including `<img>` elements
 
 ```html
 <!DOCTYPE html>
@@ -37,8 +48,8 @@
   <head>
     <!-- metadata is contained in this element-->
     <title> Title of HTML Page</title>
-    <a href=”https://www.google.com/” target=”_blank”>This anchor element links to google and will open in a new tab or window.</a>
-  </head>
+    <a href=”https://developer.mozilla.org/en-US/docs/Web”>The URL for this anchor element is an absolute file path.</a>
+    <a href=”./about.html”>The URL for this anchor element is a relative file path.</a>  </head>
 <html>
 
 ```
