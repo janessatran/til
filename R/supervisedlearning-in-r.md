@@ -17,3 +17,14 @@ lm(formula, data, subset, weights, na.action,
 ```
 - the formula describes the model, for example `lm(MPG ~ ., data=data)` indicates that MPG is explained by all predictors (denoted as `.`) in the R formula input to `lm()`
 - An expression in the form `y ~ model` is inerpreted as a model consists of a series of terms separated by `+` operators. 
+
+- `createDataPartition()`: function that can be used to create balanced splits of the data; from the `caret` package
+```r
+library(caret)
+set.seed(3456)
+trainIndex <- createDataPartition(iris$Species, p=.8, list = FALSE, times = 1)
+irisTrain <- iris[trainIndex, ]
+iristest <- iris[-trainIndex,]
+```
+
+- `trainControl(method = 'none')`: turns off all resampling and just trains the model on all the data
