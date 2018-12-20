@@ -42,6 +42,37 @@
 - HTML anchor `<a>` tags can surround hyperlink content to a specified url
 - they can be applied to many different kinds of content, including `<img>` elements
 
+*Linking to location in same document:*
+- the HTML anchor element `<a>` can create hyperlinks to different parts of the same HTML document using the href attribute to point to the desired location with `#` followed by the id of the element to link to. 
+```html
+<div> 
+  <p id="id-of-element-to-link-to">Jump to a different part of the page!</p>
+</div>
+<a href = "#id-of-element-to-link-to">Take me to a different part of the page</a>
+```
+*Whitespace in HTML:*
+- whitespace added to an HTML document between block level elements will generally be ignored by the browser
+- whitespace is added for organization and easier reading of the document itself
+
+```html
+<p>Test paragraph</p>
+
+<!-- The whitespace created by this line, and above/below, is ignored by the browser-->
+
+<p>Another test paragraph, which will sit right below the first one</p>
+```
+*Identing nested HTML code:*
+- html code should be formatted such that the indentation of text increases once for each level of nesting
+- the 13c standards recommend two spaces of indentation per level of nesting
+
+*Comments in HTML:*
+- add comment between `<!--` and `-->`
+
+*HTML alt attribute:*
+- an `<img>` element can have alternative text via the `alt` attribute 
+- the alternative text will be displayed if an image fails to render due to an incorrect URL, if the image format is not suported by the browser, if the image is blocked from being dispalyed, or if the image has not been recieved from the URL
+- the `alt` text will also be read aloud if screen reading software is used to help support visually impaired individuals
+
 ```html
 <!DOCTYPE html>
 <html>
