@@ -5,6 +5,7 @@ Inspired by [botanical](https://github.com/botanical). Just keeping track of thi
 - [Intro to SQL](https://github.com/janessatran/til/blob/master/SQL/sql_intro.md)
 - [Creating triggers (exercises)](https://github.com/janessatran/til/blob/master/SQL/triggers_exercises.md)
 - [View Modification (exercises)](https://github.com/janessatran/til/blob/master/SQL/view_mod_exercises.md)
+- [Notes](https://github.com/janessatran/til/blob/master/SQL/notes.md)
 
 ### Databases
 - [Relational Design Theory](https://github.com/janessatran/til/blob/master/Databases/relational_design_theory.md)
