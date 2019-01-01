@@ -22,3 +22,6 @@ Inspired by [botanical](https://github.com/botanical). Just keeping track of thi
 
 ### Machine Learning
 - [ML Methods for Survey Researchers](https://github.com/janessatran/til/blob/master/Machine%20Learning/ml_methods_survey_research.md)
+
+### Energy
+- [Energy Efficiency Notes](https://github.com/janessatran/til/blob/master/energy/energy_efficiency_notes.md)
