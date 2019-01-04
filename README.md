@@ -25,3 +25,6 @@ Inspired by [botanical](https://github.com/botanical). Just keeping track of thi
 
 ### Energy
 - [Energy Efficiency Evaluation](https://github.com/janessatran/til/blob/master/energy/energy_efficiency_notes.md)
+
+### Using git
+- [Git basics](https://github.com/janessatran/til/blob/master/git/how-to-git.md)
