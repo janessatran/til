@@ -54,6 +54,45 @@ Pleased to meet you, Chris
 - `ljust`: left justify the string
 - `rjust`: right justify the string
 
+### Arrays
+Declared like `names = ['A', 'B', 'C']
+- zero indexed 
+- can use the string methods on arrays, but they operate on the elements and not characters
+- can call the `each` method on an array object for iteration through each element in array
+Example:
+```ruby
+languages = ['English', 'German', 'Ruby']
+languages.each do |lang|
+  puts 'I love ' + lang + '!'
+  puts 'Don\'t you?'
+end
+```
+Results in:
+```ruby
+I love English!
+Don't you?
+I love German!
+Don't you?
+I love Ruby!
+Don't you?
+```
+
+- `last` to get last element
+- `join` to add string between array's objects
+Example:
+```ruby
+foods = ['cheese', 'donut', 'apple']
+puts foods.join(', ')
+```
+Results in:
+```
+cheese, donut, apple
+```
+
+- `push` to add element to end of array
+- `pop` to remove last element of array 
+
+
 ### Some general things
 #### Branching
 Using the `if` is `true` run code, `if` is `false` do nothing. 
@@ -79,3 +118,6 @@ while i < 10
   i = i + 1
 end
 ```
+
+#### Methods
+- declare a method in between `def` and `end` block
