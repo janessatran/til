@@ -121,3 +121,12 @@ end
 
 #### Methods
 - declare a method in between `def` and `end` block
+
+#### Variable Scope
+| Name Begins With |	Variable Scope | 
+|------------------|-----------------|
+| $	| A global variable | 
+| @	| An instance variable |
+| [a-z] or _	| A local variable |
+| [A-Z]	| A constant |
+| @@	| A class variable | 
