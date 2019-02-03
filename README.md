@@ -28,3 +28,6 @@ Inspired by [botanical](https://github.com/botanical). Just keeping track of thi
 
 ### Using git
 - [Git basics](https://github.com/janessatran/til/blob/master/git/how-to-git.md)
+
+### Ruby 
+- [Intro to Ruby](https://github.com/janessatran/til/blob/master/ruby/ruby-basics.md)
