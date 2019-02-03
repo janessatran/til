@@ -42,3 +42,40 @@ Your name is Chris
 Pleased to meet you, Chris
 . :) 
 ```
+
+### String Methods
+- `reverse`: gives backwards version of a string
+- `length`: gives number of characters (including spaces) in the string
+- `upcase`: changes every lowercase letter to uppercase
+- `downcase`: changes every uppercase letter to lowercase
+- `swapcase`: switches the case of every letter in the string
+- `capitalize`: switches the first character to uppercase (if it is a letter)
+- `center`: adds spaces to the beginning and end of the string to make it look centered; it can take a parameter for lineWidth
+- `ljust`: left justify the string
+- `rjust`: right justify the string
+
+### Some general things
+#### Branching
+Using the `if` is `true` run code, `if` is `false` do nothing. 
+
+Example:
+```ruby
+puts 'Hello, what's your name?'
+name = gets.chomp
+puts 'Hello, ' + name + '.'
+if name == 'Belle'
+  puts 'What a lovely name!'
+end
+```
+#### Comments
+Use a `#` to comment out code
+
+#### Loops
+Start with `for` `while`, etc, indent code and end block with `end`
+Example:
+```ruby
+while i < 10
+  puts i
+  i = i + 1
+end
+```
