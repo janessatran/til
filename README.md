@@ -31,3 +31,4 @@ Inspired by [botanical](https://github.com/botanical). Just keeping track of thi
 
 ### Ruby 
 - [Intro to Ruby](https://github.com/janessatran/til/blob/master/ruby/ruby-basics.md)
+- [Using Rspec](https://github.com/janessatran/til/blob/master/ruby/rspec.md)
