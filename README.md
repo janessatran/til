@@ -33,3 +33,4 @@ Inspired by [botanical](https://github.com/botanical). Just keeping track of thi
 - [Intro to Ruby](https://github.com/janessatran/til/blob/master/ruby/ruby-basics.md)
 - [Using Rspec](https://github.com/janessatran/til/blob/master/ruby/rspec.md)
 - [Blocks, Procs, & Lambdas](https://github.com/janessatran/til/blob/master/ruby/blocks_procs_lambdas.md)
+- [OOP](https://github.com/janessatran/til/blob/master/ruby/oop.md)
