@@ -1,6 +1,6 @@
-# Object-oriented programming
+# Object-Oriented Programming
 
-## Classes and Methods
+### Classes and Methods
 **What is an implicit return?**
 When the return value of a method is the value return byt he last statement.
 ```ruby
