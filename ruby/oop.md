@@ -145,6 +145,7 @@ Yes
 You use a class variable when the value may change (like the number of objects instantiated). You use a constant when it doesn't. 
 
 **What’s the difference between a class and a module?**
+```
 ╔═══════════════╦═══════════════════════════╦═════════════════════════════════╗
 ║               ║ class                     ║ module                          ║
 ╠═══════════════╬═══════════════════════════╬═════════════════════════════════╣
@@ -172,6 +173,7 @@ You use a class variable when the value may change (like the number of objects i
 ║               ║   (only with inheritance) ║   given instance with singleton ║
 ║               ║                           ║   methods from module)          ║
 ╚═══════════════╩═══════════════════════════╩═════════════════════════════════╝
+```
 [source](https://stackoverflow.com/questions/151505/difference-between-a-class-and-a-module)
 
 **When would you use a class but not a module?**
