@@ -44,4 +44,37 @@ document.querySelector('html').onclick = function() {
   alert('Ouch! Stop picking me!');
 }
 ```
+## Constructor
+The `constructor` method is a special method for creating and initializing an object created within a `class`.
+```javascript
+class Polygon {
+  constructor() {
+    this.name = "Polygon";
+  }
+}
 
+var poly1 = new Polygon();
+console.log(poly1.name);
+// expected output: "Polygon"
+```
+
+```javascript
+class Square extends Polygon {
+  constructor(length) {
+    // Here, it calls the parent class' constructor with lengths
+    // provided for the Polygon's width and height
+    super(length, length);
+    // Note: In derived classes, super() must be called before you
+    // can use "this". Leaving this out will cause a reference error.
+    this.name = 'Square';
+}
+
+get area() {
+  return this.height * this.width;
+}
+
+set area(value) {
+    this.area = value;
+  }
+}
+```
