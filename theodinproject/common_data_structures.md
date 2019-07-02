@@ -17,10 +17,10 @@ A stack is said to be in **overflow** state when its completely full and is said
 
 ![stack drawing](https://www.tutorialspoint.com/data_structures_algorithms/images/stack_representation.jpg)
 
-### Applications of a stack
+#### Applications of a stack
 The simplest application of a stack is to reverse a word. You push a word to the stack, letter by letter, and then pop letters from the stack. Other uses include parsing and expression conversion (infix to postfix, postfix to prefix, etc)
 
-### Complexity Analysis of stack operations
+#### Complexity Analysis of stack operations
 - **push**: O(1)
 - **pop**: O(1)
 - **top**: O(1)
@@ -38,28 +38,28 @@ A queue is an abstract data type in which the first element is inserted from the
 ![stack drawing](https://www.studytonight.com/data-structures/images/introduction-to-queue.png)
 
 
-### Applications of a queue
+#### Applications of a queue
 Used whenenever we need to manage groups of objects in an order in which the first one coming in also gets out first. For example:
 - Serving requests on a single shared resource (like a printer, CPU task scheduling, etc)
 - Call center phone systems to hold people calling them in an order, until a service rep is free
 - Handling of interrupts in real-time systems
 
-### Complexity Analysis of stack operations
+#### Complexity Analysis of stack operations
 - **enqueue**: O(1)
 - **dequeue**: O(1)
 - **size**: O(1)
 
 
-## What’s the difference between a stack and a queue?
+### What’s the difference between a stack and a queue?
 A stack is first in, last out while a queue is first in, first out.
 
-## What is a stack useful for?
+### What is a stack useful for?
 A stack is useful for reversing a string or converting an infix expression to a postfix expression.
 
-## What is a queue useful for?
+### What is a queue useful for?
 A queue is useful for when you need to manage a group of objects in the order of when they came into the queue. 
 
-## What’s the best way to implement stacks and queues in Ruby (hint: think simple)?
+### What’s the best way to implement stacks and queues in Ruby (hint: think simple)?
 In Ruby, a stack can be easily implemented using the `Array` class. We can restrict the interface that wraps the array with the `push` and `pop` operations, as well as `size` to emulate stack functionality. 
 
 ```ruby
@@ -119,6 +119,8 @@ end
 ```
 
 ## Why bother having many different search algorithms?
+An **algorithm** is a sequence of computational steps that transform the input into the output. There are many different search algorithms because they satisfy different sorting use-cases. For example, merge sort is good for sorting linked lists while heap sort is good for sorting arrays. 
+
 ## What is breadth-first-search (BFS)?
 ## What is depth-first-search (DFS)?
 ## What situations would you want to use BFS?
