@@ -35,7 +35,7 @@ A queue is an abstract data type in which the first element is inserted from the
 - once a new element is inserted into the queue, all the elements inserted before the new element in the queue must be removed to remove the new element
 - `peek()` is ofted used to return the value of the first element without dequeueing it
 
-![stack drawing](https://www.studytonight.com/data-structures/images/introduction-to-queue.png)
+![queue drawing](https://www.studytonight.com/data-structures/images/introduction-to-queue.png)
 
 
 #### Applications of a queue
@@ -122,6 +122,18 @@ end
 An **algorithm** is a sequence of computational steps that transform the input into the output. There are many different search algorithms because they satisfy different sorting use-cases. For example, merge sort is good for sorting linked lists while heap sort is good for sorting arrays. 
 
 ## What is breadth-first-search (BFS)?
+It is a traversing algorithm where you start from a selected node, traverse the graph layer wise (exploring the neighbor nodes which are directly connected to the source node), and then move towards the next level of nodes. 
+
+You are required to traverse the graph breadthwise as follows:
+1. first move horizontally and visit all the nodes of the current layer
+2. move to the next layer
+
+![BFS algorithm drawing](https://he-s3.s3.amazonaws.com/media/uploads/fdec3c2.jpg)
+
+To avoid processing the same node again, use a boolean array which marks the node after it is processed. While visiting the nodes in the layer of a graph, store them in a manner such that you can traverse the corresponding child nodes in a similar order. In the diagram above, we start at 0 and visit the child nodes 1, 2, and 3. We store them in the array in the order they are visited and then begin visiting their child nodes in order (1 first- 4 and 5; 2- 6 and 7, etc). Use a queue to store the node and mark it as "visited" until all its neighbors are marked. Using a queue ensures that the node is visited in the order they are inserted.
+
+More information on the algorithm [here](https://www.hackerearth.com/practice/algorithms/graphs/breadth-first-search/tutorial/).
+
 ## What is depth-first-search (DFS)?
 ## What situations would you want to use BFS?
 ## What situations would you want to use DFS instead?
