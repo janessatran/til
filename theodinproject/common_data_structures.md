@@ -135,6 +135,22 @@ To avoid processing the same node again, use a boolean array which marks the nod
 More information on the algorithm [here](https://www.hackerearth.com/practice/algorithms/graphs/breadth-first-search/tutorial/).
 
 ## What is depth-first-search (DFS)?
+A recursive algorithm that uses the idea of backtracking. It involves exhaustive searches of all the nodes by going ahead, if possible, else backtracking. 
+
+Backtracking means that when you are moving forward and there are no more nodes along the current path, you move backwards on teh same path to find nodes to traverse. All nodes will be visited on the current path till all the univisted nodes have been traversed, after which the next path will be selected.
+
+The recursive nature of DFS is implemented with stacks. 
+- Pick a starting node and push all its adjacent nodes into the stack
+- Pop a node from a stack to select the next node to visit and push all its adjacent nodes into a stack
+- Repeat process until the stack is empty. However, ensure that the nodes that are visited are marked. 
+
+*In depth-first search, we can determine whether two nodes x and y have a path between them by looking at the children of the starting node and recursively determining if a path exists.*
+
 ## What situations would you want to use BFS?
+If we want to find the shortest path between two nodes in a graph. 
+
 ## What situations would you want to use DFS instead?
+If you want to determine if there is a path between two nodes.
+
 ## When would BFS be impractical
+If you have a really big graph. In order to traverse it, you have to store the entire graph which can cost a lot in space and memory.
