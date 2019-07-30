@@ -2,8 +2,56 @@
 questions from The [The Odin Project](https://www.theodinproject.com/courses/web-development-101/lessons/fundamentals-part-1)
 
 #### How do you declare a variable?
+Declare a variable using the `let` keyword. The old way is to use `var`. 
+```javascript
+let message = 'Hello!';
+
+// can also declare multiple vars at once
+let user = 'Janessa', 
+    age = 99, 
+    message = 'Hello';
+```
+<br>
+
 #### What are three different ways to declare a variable?
+You can use `var`, `let`, or `const`. The main differences between `var` and `let/const` are that:
+1. `var` variables have no block scope. For example:
+```javascript
+if (true) {
+  var test = true;
+}
+
+alert(test); // true, the variable lives after the if block
+```
+If a code block is inside a function, then `var` becomes a function-level variable:
+```javascript
+function printGreeting() {
+  if (true) {
+    var phrase = "Hello!";
+  }
+  alert(phrase); // will print Hello
+}
+
+printGreeting();
+alert(phrase); // Error: phrase not defined
+```
+2. `var` declarations are processed at function start. For example, the below code will run
+```javascript
+function var printGreeting() {
+  if (true) {
+    phrase = "Hello";
+    alert(phrase);
+    var phrase;
+  }
+}
+printGreeting();
+```
+<br>
+
 #### Which one should you use when?
+`var`: when you don't need block scope.
+`let`: when you want to constrain the scope.
+`const`: when the value you are assigning will not be redeclared; const also has limited scope.
 #### What are the rules for naming variables?
 #### What are operators, operands, and operations?
 #### What is concatenation and what happens when you add numbers and strings together?
