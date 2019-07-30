@@ -205,8 +205,73 @@ showMessageWithParams('Ann', "What's up?"); // Ann: What's up? (**)
 ```
 
 #### What are the three logical operators and what do they stand for?
+`||` OR, `&&` AND, and `!` NOT.
+
 #### What are the comparison operators?
+They return a boolean value (operators like `>, <, ==, >=, <=`. Things to note about comparison operators:
+- Strings are compared letter-by-letter in the "dictionary" order.
+- When values of different types are compared, they get converted to numbers (with exclusion of a strict equlity check which is done with `===`).
+- The values `null` and `undefined` equal `==` each other and do not equal any other value.
+- Be careful when comparing things to `null/undefined` because there is weird behavior (so it's good to check if a value is null or undefined first).
+```javascript
+alert( null > 0 );  // (1) false
+alert( null == 0 ); // (2) false
+alert( null >= 0 ); // (3) true
+/*
+The last value returns true because null is converted to a number and being treated as 0. On the other hand, null == 0 returns false because null == undefined. 
+*/
+
+// undefined values should be compared to other values at all
+alert( undefined > 0 ); // false (1)
+alert( undefined < 0 ); // false (2)
+alert( undefined == 0 ); // false (3)
+```
+
 #### What is nesting?
+A function is called a **nested** function when it is created inside another function. 
+
+```javascript
+function sayHiBye(firstName, lastName) {
+  
+  // helper nested function to use below
+  function getFullName() {
+    return firstName + " " + lastName;
+  }
+  
+  alwert("Hello, " + getFullName());
+  alert("Bye, " + getFullName());
+  
+}
+
+```
+A nested function can be returned as either a property of a new object or as a result by itself. 
+
+```javascript
+// Here, the nested function is assigned to the new object by the constructor function
+function User(name) {
+  // the object method is created as a nested function
+  this.sayHi = function() {
+    alert(name);
+  };
+}
+
+let user = new User("Janessa");
+user.sayHi(); // the method "sayHi" has access to the outer "name"
+
+// here we just return the nested function
+function makeCounter() {
+  let count = 0;
+  
+  return function() {
+    return count++; // has accees to the outer "count"
+  };
+}
+
+let counter = makeCounter();
+alert( counter() ); // 0
+alert( counter() ); // 1
+```
+
 #### What are truthy and falsy values?
 #### What are the falsy values in Javascript?
 #### What is the syntax for an if/else if/else conditional?
