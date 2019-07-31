@@ -247,6 +247,7 @@ alert(str.substring(5, 2)); // "" empty string
     What are methods?
 </h3>
 Blocks of code we can re-use by calling the function. Function declaration in JavaScript looks like this:
+
 ```javascript
 function showMessage() {
   alert("hello, world!");
@@ -260,11 +261,12 @@ showMessageWithParams('Ann', 'Hello!'); // Ann: Hello! (*)
 showMessageWithParams('Ann', "What's up?"); // Ann: What's up? (**)
 ```
 
-
 <h3 id="nesting">
     What is nesting?
 </h3>
+
 A function is called a **nested** function when it is created inside another function. 
+
 ```javascript
 function sayHiBye(firstName, lastName) {
   
@@ -277,7 +279,6 @@ function sayHiBye(firstName, lastName) {
   alert("Bye, " + getFullName());
   
 }
-
 ```
 A nested function can be returned as either a property of a new object or as a result by itself. 
 
