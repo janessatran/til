@@ -194,6 +194,7 @@ Objects
     What is the difference between single, double, and backtick quotes for strings?
 </h3>
 There is no difference between single and double quotes ("Hello" vs 'Hello'), but backtick quotes are "extended functionality" quotes. They allow us to embed variables and expressions into a string by wrapping them in `${...}`.
+
 ```javascript
 // Example of backtick quotes expression
 let name = "Janessa";
@@ -203,20 +204,19 @@ alert(`Hello, ${name}!`); // Hello, Janessa!
 
 // embed an expression
 alert(`the result is ${1+1}`); // the result is 2
-
 ```
 
 ### How do you escape characters in a string?
-- Horizontal Tab is replaced with \t
-- Vertical Tab is replaced with \v
-- Null  is replaced with \0
-- Backspace is replaced with \b
-- Form feed is replaced with \f
-- Newline is replaced with \n
-- Carriage return is replaced with \r
-- Single quote is replaced with \'
-- Double quote is replaced with \"
-- Backslash is replaced with \\
+- Horizontal Tab is replaced with `\t`
+- Vertical Tab is replaced with `\v`
+- Null  is replaced with `\0`
+- Backspace is replaced with `\b`
+- Form feed is replaced with `\f`
+- Newline is replaced with `\n`
+- Carriage return is replaced with `\r`
+- Single quote is replaced with `\'`
+- Double quote is replaced with `\"`
+- Backslash is replaced with `\\`
 
 
 ### What is the difference between slice/substring/substr?
@@ -230,7 +230,9 @@ alert(str.slice(0, 1)); // 'h'
 let str = 'stringify';
 alert(str.slice(2)); // ringify, from 2nd position to the end
 ```
+
 - **substring**: returns the part of the string between the start and end. You can also have the start be greater than the end.
+
 ```javascript
 let str = 'stringify';
 
