@@ -273,9 +273,49 @@ alert( counter() ); // 1
 ```
 
 #### What are truthy and falsy values?
+- **truthy value**: evaluates to `true` in a Boolean context
+- **falsy value**: evalutes to `false` in a Boolean context
+
 #### What are the falsy values in Javascript?
+undefined, null, NaN, 0, and "" (empty string)... and `false`.
+
 #### What is the syntax for an if/else if/else conditional?
+```javascript
+let timeOfDay = "midnight"
+
+if (timeOfDay == "morning") {
+  alert("What a great time for a cup of coffee!");
+} else if (timeOfDay == "afternoon") {
+  alert("Hmm... it's a toss up about whether I should drink some coffee now.");
+} else {
+  alert("It's too late for coffee, I should sleep!");
+}
+```
+
 #### What is the syntax for a switch statement?
+```javascript
+let a = 2 + 2;
+
+switch (a) {
+  case 3:
+    alert( 'Too small...' );
+    break;
+  case 4:
+    alert( 'Exactly!' );
+    break;
+  case 5:
+    alert( 'Too large...' );
+    break;
+  default:
+ 1   alert( 'I don't know such values." );
+}
+```
+
 #### What is the syntax for a ternary operator?
+`let result = condition ? value1 : value2`
+
 #### What is the relationship between null and undefined?
+`null == undefined // true` -> This is because they are both falsy values. In JavaScript, `undefined` means a variable has been declared but has not yet been assigned. `null` is an assignment value that has no value such as `let tempVar = null`.
+
 #### What are conditionals?
+`if`, `else`, the ternary operator `?`.
