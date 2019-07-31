@@ -69,7 +69,7 @@ printGreeting();
 ```
 <br>
 
-#### Which one should you use when?
+### Which one should you use when?
 - `var`: when you don't need block scope; also the old school variable declaration.
 - `let`: when you want to constrain the scope; the modern variable declaration.
 - `const`: when the value you are assigning will not be redeclared; const also has limited scope.
@@ -89,14 +89,14 @@ printGreeting();
 - **operands**: what operators are applied to (in `5 * 2 ` there are two operands, 5 and 2)
 
 
-#### What is the difference between == and ===?
+### What is the difference between == and ===?
 - `===` is a strict comparison (only true if the operands are of the same type and the contents match).
 - `==`: converts the operands to the same type before making the comparison. 
 
-#### What are operator precedence values?
+### What are operator precedence values?
 Operator precendence is the execution order of an expression with more than one operator.
 
-#### What are the increment/decrement operators?
+### What are the increment/decrement operators?
 - **increment (++)**: increases a variable by 1
 ```javascript
 let counter = 2;
@@ -111,7 +111,7 @@ alert(counter); // 1
 ```
 
 
-#### What is the difference between prefixing and post-fixing them?
+### What is the difference between prefixing and post-fixing them?
 When the operator goes after the variable, it is in **postfix** form, and the update is made to the variable after the expression is complete. When the operator goes before the variable, it is in **prefix** form, and the update is made to the variable before the expression is complete.
 
 Example:
@@ -125,14 +125,14 @@ alert(counter++); // 0
 alert(counter++); // 1
 ```
 
-#### What is the “Unary +” Operator?
+### What is the “Unary +” Operator?
 An operator is **unary** if it has a single operand. For example, the unary negation `-` reverses the sign of a number. The **Unary +** operator in JavaScript is useful to convert anything to a number (such as `+length`). If it's a number, the value doesn't change and the comparison returns true. If it's not a number, the assertion is false.
 
 
-#### What are the three logical operators and what do they stand for?
+### What are the three logical operators and what do they stand for?
 `||` OR, `&&` AND, and `!` NOT.
 
-#### What are the comparison operators?
+### What are the comparison operators?
 They return a boolean value (operators like `>, <, ==, >=, <=`. Things to note about comparison operators:
 - Strings are compared letter-by-letter in the "dictionary" order.
 - When values of different types are compared, they get converted to numbers (with exclusion of a strict equlity check which is done with `===`).
@@ -187,7 +187,7 @@ typeof "foo" // "string"
 typeof Symbol("id") // "symbol"
 ```
 
-#### Which data type is NOT primitive?
+### Which data type is NOT primitive?
 Objects
 
 <h3 id="strings">
@@ -206,7 +206,7 @@ alert(`the result is ${1+1}`); // the result is 2
 
 ```
 
-#### How do you escape characters in a string?
+### How do you escape characters in a string?
 - Horizontal Tab is replaced with \t
 - Vertical Tab is replaced with \v
 - Null  is replaced with \0
@@ -219,7 +219,7 @@ alert(`the result is ${1+1}`); // the result is 2
 - Backslash is replaced with \\
 
 
-#### What is the difference between slice/substring/substr?
+### What is the difference between slice/substring/substr?
 There are 3 methods in JavaScript to get a substring (slice, substrings, and substr).
 - **slice**: returns the part of the string from start to end (exclusive of end). If there is no second argument, then slice goes til the end of the string.
 ```javascript
@@ -260,10 +260,10 @@ showMessageWithParams('Ann', 'Hello!'); // Ann: Hello! (*)
 showMessageWithParams('Ann', "What's up?"); // Ann: What's up? (**)
 ```
 
+
 <h3 id="nesting">
     What is nesting?
 </h3>
-
 A function is called a **nested** function when it is created inside another function. 
 ```javascript
 function sayHiBye(firstName, lastName) {
@@ -313,10 +313,10 @@ alert( counter() ); // 1
 - **truthy value**: evaluates to `true` in a Boolean context
 - **falsy value**: evalutes to `false` in a Boolean context
 
-#### What are the falsy values in Javascript?
+### What are the falsy values in Javascript?
 undefined, null, NaN, 0, and "" (empty string)... and `false`.
 
-#### What is the syntax for an if/else if/else conditional?
+### What is the syntax for an if/else if/else conditional?
 ```javascript
 let timeOfDay = "midnight"
 
@@ -329,7 +329,7 @@ if (timeOfDay == "morning") {
 }
 ```
 
-#### What is the syntax for a switch statement?
+### What is the syntax for a switch statement?
 ```javascript
 let a = 2 + 2;
 
@@ -348,11 +348,11 @@ switch (a) {
 }
 ```
 
-#### What is the syntax for a ternary operator?
+### What is the syntax for a ternary operator?
 `let result = condition ? value1 : value2`
 
-#### What is the relationship between null and undefined?
+### What is the relationship between null and undefined?
 `null == undefined // true` -> This is because they are both falsy values. In JavaScript, `undefined` means a variable has been declared but has not yet been assigned. `null` is an assignment value that has no value such as `let tempVar = null`.
 
-#### What are conditionals?
+### What are conditionals?
 `if`, `else`, the ternary operator `?`.
