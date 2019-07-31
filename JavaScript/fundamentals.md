@@ -1,7 +1,25 @@
 # Fundamentals of JavaScript 
-questions from The [The Odin Project](https://www.theodinproject.com/courses/web-development-101/lessons/fundamentals-part-1)
+Questions from The [The Odin Project](https://www.theodinproject.com/courses/web-development-101/lessons/fundamentals-part-1)
+This is a good resource for JavaScript [javascript.info](http://javascript.info).
 
-#### How do you declare a variable?
+## Questions/Topics Covered:
+- [How do you declare a variable?](#How-do-you-declare-a-variable?)
+- [What are three different ways to declare a variable?](#three-ways-declare-a-variable)
+- [What are the rules for naming variables?](#naming-variables)
+- [What are operators, operands, and operations?... and other operator questions](#operators)
+- [What is concatenation and what happens when you add numbers and strings together?](#concat)
+- [What are the seven data types of javascript?](#data-types)
+- [What is the difference between single, double, and backtick quotes for strings?... and other string questions](#strings)
+- [What are methods?](#functions)
+- [What is nesting?](#nesting)
+- [What are truthy and falsy values?.. and other things about conditionals/switch statements](#conditionals)
+
+
+## Questions and Answers:
+<h4 id="How-do-you-declare-a-variable?">
+    How do you declare a variable?
+</h4>
+
 Declare a variable using the `let` keyword. The old way is to use `var`. 
 ```javascript
 let message = 'Hello!';
@@ -13,7 +31,9 @@ let user = 'Janessa',
 ```
 <br>
 
-#### What are three different ways to declare a variable?
+<h4 id="three-ways-declare-a-variable">
+    What are three different ways to declare a variable?
+</h4>
 You can use `var`, `let`, or `const`. The main differences between `var` and `let/const` are that:
 
 1. `var` variables have no block scope. For example:
@@ -55,21 +75,20 @@ printGreeting();
 - `const`: when the value you are assigning will not be redeclared; const also has limited scope.
 <br>
 
-#### What are the rules for naming variables?
+<h4 id="naming-variables">
+    What are the rules for naming variables?
+</h4>
 1. The name must contain only letters, digits, or the symbols $ and _.
 2. The first character must not be a digit.
 <br>
 
-#### What are operators, operands, and operations?
+<h4 id="operators">
+    What are operators, operands, and operations?
+</h4>
 - **operators**: things like addition, multiplication, subtraction, etc
 - **operands**: what operators are applied to (in `5 * 2 ` there are two operands, 5 and 2)
 
-#### What is concatenation and what happens when you add numbers and strings together?
-**Concatenation** is sticking different things together to make a unit (for example, you could stick strings and variables together to make a sentence using the + operator). If you add numbers and strings together, it will concatenate the number to the string:
-```javascript
-let x = "2";
-console.log(x + 3); // results in 23
-```
+
 #### What is the difference between == and ===?
 - `===` is a strict comparison (only true if the operands are of the same type and the contents match).
 - `==`: converts the operands to the same type before making the comparison. 
@@ -106,11 +125,45 @@ alert(counter++); // 0
 alert(counter++); // 1
 ```
 
-
 #### What is the “Unary +” Operator?
 An operator is **unary** if it has a single operand. For example, the unary negation `-` reverses the sign of a number. The **Unary +** operator in JavaScript is useful to convert anything to a number (such as `+length`). If it's a number, the value doesn't change and the comparison returns true. If it's not a number, the assertion is false.
 
-#### What are the seven data types of javascript?
+
+#### What are the three logical operators and what do they stand for?
+`||` OR, `&&` AND, and `!` NOT.
+
+#### What are the comparison operators?
+They return a boolean value (operators like `>, <, ==, >=, <=`. Things to note about comparison operators:
+- Strings are compared letter-by-letter in the "dictionary" order.
+- When values of different types are compared, they get converted to numbers (with exclusion of a strict equlity check which is done with `===`).
+- The values `null` and `undefined` equal `==` each other and do not equal any other value.
+- Be careful when comparing things to `null/undefined` because there is weird behavior (so it's good to check if a value is null or undefined first).
+```javascript
+alert( null > 0 );  // (1) false
+alert( null == 0 ); // (2) false
+alert( null >= 0 ); // (3) true
+/*
+The last value returns true because null is converted to a number and being treated as 0. On the other hand, null == 0 returns false because null == undefined. 
+*/
+
+// undefined values should be compared to other values at all
+alert( undefined > 0 ); // false (1)
+alert( undefined < 0 ); // false (2)
+alert( undefined == 0 ); // false (3)
+```
+
+<h4 id="concat">
+    What is concatenation and what happens when you add numbers and strings together?
+</h4>
+**Concatenation** is sticking different things together to make a unit (for example, you could stick strings and variables together to make a sentence using the + operator). If you add numbers and strings together, it will concatenate the number to the string:
+```javascript
+let x = "2";
+console.log(x + 3); // results in 23
+```
+
+<h4 id="data-types">
+    What are the seven data types of javascript?
+</h4>
 1. Number
 2. String
 3. Boolean (`true` and `false`)
@@ -134,11 +187,12 @@ typeof "foo" // "string"
 typeof Symbol("id") // "symbol"
 ```
 
-
 #### Which data type is NOT primitive?
 Objects
 
-#### What is the difference between single, double, and backtick quotes for strings?
+<h4 id="strings">
+    What is the difference between single, double, and backtick quotes for strings?
+</h4>
 There is no difference between single and double quotes ("Hello" vs 'Hello'), but backtick quotes are "extended functionality" quotes. They allow us to embed variables and expressions into a string by wrapping them in `${...}`.
 ```javascript
 // Example of backtick quotes expression
@@ -189,7 +243,9 @@ alert(str.substring(2, 5)); // "rin"
 alert(str.substring(5, 2)); // "" empty string 
 ```
 
-#### What are methods?
+<h4 id="functions">
+    What are methods?
+</h4>
 Blocks of code we can re-use by calling the function. Function declaration in JavaScript looks like this:
 ```javascript
 function showMessage() {
@@ -204,32 +260,11 @@ showMessageWithParams('Ann', 'Hello!'); // Ann: Hello! (*)
 showMessageWithParams('Ann', "What's up?"); // Ann: What's up? (**)
 ```
 
-#### What are the three logical operators and what do they stand for?
-`||` OR, `&&` AND, and `!` NOT.
+<h4 id="nesting">
+    What is nesting?
+</h4>
 
-#### What are the comparison operators?
-They return a boolean value (operators like `>, <, ==, >=, <=`. Things to note about comparison operators:
-- Strings are compared letter-by-letter in the "dictionary" order.
-- When values of different types are compared, they get converted to numbers (with exclusion of a strict equlity check which is done with `===`).
-- The values `null` and `undefined` equal `==` each other and do not equal any other value.
-- Be careful when comparing things to `null/undefined` because there is weird behavior (so it's good to check if a value is null or undefined first).
-```javascript
-alert( null > 0 );  // (1) false
-alert( null == 0 ); // (2) false
-alert( null >= 0 ); // (3) true
-/*
-The last value returns true because null is converted to a number and being treated as 0. On the other hand, null == 0 returns false because null == undefined. 
-*/
-
-// undefined values should be compared to other values at all
-alert( undefined > 0 ); // false (1)
-alert( undefined < 0 ); // false (2)
-alert( undefined == 0 ); // false (3)
-```
-
-#### What is nesting?
 A function is called a **nested** function when it is created inside another function. 
-
 ```javascript
 function sayHiBye(firstName, lastName) {
   
@@ -272,7 +307,9 @@ alert( counter() ); // 0
 alert( counter() ); // 1
 ```
 
-#### What are truthy and falsy values?
+<h4 id="conditionals">
+    What are truthy and falsy values?.. and other things about conditionals/switch statements.
+</h4>
 - **truthy value**: evaluates to `true` in a Boolean context
 - **falsy value**: evalutes to `false` in a Boolean context
 
