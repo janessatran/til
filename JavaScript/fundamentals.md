@@ -16,9 +16,9 @@ This is a good resource for JavaScript [javascript.info](http://javascript.info)
 
 
 ## Questions and Answers:
-<h4 id="How-do-you-declare-a-variable?">
+<h3 id="How-do-you-declare-a-variable?">
     How do you declare a variable?
-</h4>
+</h3>
 
 Declare a variable using the `let` keyword. The old way is to use `var`. 
 ```javascript
@@ -31,9 +31,9 @@ let user = 'Janessa',
 ```
 <br>
 
-<h4 id="three-ways-declare-a-variable">
+<h3 id="three-ways-declare-a-variable">
     What are three different ways to declare a variable?
-</h4>
+</h3>
 You can use `var`, `let`, or `const`. The main differences between `var` and `let/const` are that:
 
 1. `var` variables have no block scope. For example:
@@ -75,16 +75,16 @@ printGreeting();
 - `const`: when the value you are assigning will not be redeclared; const also has limited scope.
 <br>
 
-<h4 id="naming-variables">
+<h3 id="naming-variables">
     What are the rules for naming variables?
-</h4>
+</h3>
 1. The name must contain only letters, digits, or the symbols $ and _.
 2. The first character must not be a digit.
 <br>
 
-<h4 id="operators">
+<h3 id="operators">
     What are operators, operands, and operations?
-</h4>
+</h3>
 - **operators**: things like addition, multiplication, subtraction, etc
 - **operands**: what operators are applied to (in `5 * 2 ` there are two operands, 5 and 2)
 
@@ -152,18 +152,18 @@ alert( undefined < 0 ); // false (2)
 alert( undefined == 0 ); // false (3)
 ```
 
-<h4 id="concat">
+<h3 id="concat">
     What is concatenation and what happens when you add numbers and strings together?
-</h4>
+</h3>
 **Concatenation** is sticking different things together to make a unit (for example, you could stick strings and variables together to make a sentence using the + operator). If you add numbers and strings together, it will concatenate the number to the string:
 ```javascript
 let x = "2";
 console.log(x + 3); // results in 23
 ```
 
-<h4 id="data-types">
+<h3 id="data-types">
     What are the seven data types of javascript?
-</h4>
+</h3>
 1. Number
 2. String
 3. Boolean (`true` and `false`)
@@ -190,9 +190,9 @@ typeof Symbol("id") // "symbol"
 #### Which data type is NOT primitive?
 Objects
 
-<h4 id="strings">
+<h3 id="strings">
     What is the difference between single, double, and backtick quotes for strings?
-</h4>
+</h3>
 There is no difference between single and double quotes ("Hello" vs 'Hello'), but backtick quotes are "extended functionality" quotes. They allow us to embed variables and expressions into a string by wrapping them in `${...}`.
 ```javascript
 // Example of backtick quotes expression
@@ -243,9 +243,9 @@ alert(str.substring(2, 5)); // "rin"
 alert(str.substring(5, 2)); // "" empty string 
 ```
 
-<h4 id="functions">
+<h3 id="functions">
     What are methods?
-</h4>
+</h3>
 Blocks of code we can re-use by calling the function. Function declaration in JavaScript looks like this:
 ```javascript
 function showMessage() {
@@ -260,9 +260,9 @@ showMessageWithParams('Ann', 'Hello!'); // Ann: Hello! (*)
 showMessageWithParams('Ann', "What's up?"); // Ann: What's up? (**)
 ```
 
-<h4 id="nesting">
+<h3 id="nesting">
     What is nesting?
-</h4>
+</h3>
 
 A function is called a **nested** function when it is created inside another function. 
 ```javascript
@@ -307,9 +307,9 @@ alert( counter() ); // 0
 alert( counter() ); // 1
 ```
 
-<h4 id="conditionals">
+<h3 id="conditionals">
     What are truthy and falsy values?.. and other things about conditionals/switch statements.
-</h4>
+</h3>
 - **truthy value**: evaluates to `true` in a Boolean context
 - **falsy value**: evalutes to `false` in a Boolean context
 
