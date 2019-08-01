@@ -1,5 +1,7 @@
 # Fundamentals of CSS 
-Questions from The [The Odin Project](https://www.theodinproject.com/courses/html5-and-css3/lessons/css3-basics)
+Questions from The [The Odin Project](https://www.theodinproject.com/courses/html5-and-css3/lessons/css3-basics).
+
+A useful resource: [https://learn.shayhowe.com/html-css/](https://learn.shayhowe.com/html-css/)
 
 ## Questions/Topics Covered:
 - [What are selectors?](#selectors)
