@@ -16,7 +16,32 @@ Questions from The [The Odin Project](https://www.theodinproject.com/courses/htm
 
 Example of targeting all the `<p>` elements in your document:
 ```CSS
-p { ... }
+p {
+  color: orange;
+  font-size: 16px;
+}
+```
+
+#### Common Selectors Overview
+| Example | Classification | Explanation |
+|---------|----------------|-------------|
+| h1      | Type Selector  | Selects an element by its type |
+| .tagline | Class Selector | Selects an element by the class attribute value, which may be reused multiple times per page. |
+| #intro | ID Selector | Selects an element by the ID attribute value, which is unique and to only be used once per page. |
+
+Example:
+CSS
+```CSS
+h1 {...}
+.tagline {...}
+#intro {...}
+```
+
+```HTML
+<section id="intro">
+    <h1>....</h1>
+    <h2 class="tagline">....</h2>
+</section>
 ```
 
 ### In general, how specific should you be when targeting elements using selectors?
@@ -40,7 +65,7 @@ div.main p.intro {
 ```
 In the case above, the rules applied to the `p` of class `intro` will only apply if its ancestor is a `div` of class `main`. 
 
-#How can you shorten up a long batch of CSS that’s doing the same thing to many different #elements by putting them all in one line?
+#How can you shorten up a long batch of CSS that’s doing the same thing to many different elements by putting them all in one line?
 
 #How do you target the immediate child of an element?
 
