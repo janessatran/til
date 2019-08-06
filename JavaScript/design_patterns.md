@@ -32,6 +32,7 @@ const Person = function(name, age) {
 
 const janessa = new Person('janessa', 99);
 ```
+
 **note**: In 2015, JS was updated so that you could shorthand return the object. Before you'd have to do something like `return {name: name, age: age, sayHello: sayHello}`.
 With this update, we can turn our variables into objects with brackets (which helps us decipher the output).
 
@@ -49,6 +50,7 @@ console.log({name, color, number, food}) // {name: 'Janessa', color: 'green', nu
   What is the scope of functions created inside a function?
 </h4>
 Only functions that are returned can be accessed outside of the function itself. For example:
+
 ```javascript
 const FactoryFunction = string => {
   const capitalizeString = () => string.toUpperCase();
@@ -77,6 +79,7 @@ Closures allow us to create private variables and functions in the context of Fa
   How do we accomplish prototypal inheritance with factory functions?
 </h4>
 We can pull out the function we want from another Object and assign it to our own Object. The advantages include being able to pick and choose which functions you want to include in your new object. For example:
+
 ```javascript
 const Human = (name) => {
   const sayName = () => console.log(`my name is ${name}`)
@@ -93,7 +96,9 @@ const rurik = Dward('Rurik')
 rurik.sayName() // my name is Rurik
 rurik.laugh() // hahaha
 ```
+
 It is also possible to lump all of another object into your new object using `Object.assign`:
+
 ```javascript
 const Dwarf = (name) => {
   const prototype = Person(name)
