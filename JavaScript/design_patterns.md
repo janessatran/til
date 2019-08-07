@@ -106,3 +106,35 @@ const Dwarf = (name) => {
   return Object.assign({}, prototype, {laugh})
 }
 ```
+
+<h4 id="IIFE">
+  What is an Immediately Invoked Function Expression (IIFE)?
+</h4>
+It is when you wrap a function in paraenthesis and immediately call the function by adding `()` to the end of it.
+
+<h4 id="modules-and-factories">
+  How are Modules different from Factory Functions?
+</h4>
+The concepts are exactly the same, but instead of creating a factory that we re-use to create multiple objects, **module pattern** wraps the factory in an IIFE. 
+
+This is what the **module pattern** looks like: 
+```javascript
+const calculator = (() => {
+  const add = (a, b) => a + b;
+  const sub = (a, b) => a - b;
+  const mul = (a, b) => a * b;
+  const div = (a, b) => a / b;
+  return { add, sub, mul, div, };
+})();
+
+calculator.add(3, 5) // 8
+calculator.sub(6, 2) // 4
+calculator.mul(3, 4) // 12
+```
+
+In our example above, the function inside the Immediately Invoked Function Expression (IIFE) is a simple factory function, but we can go ahead and assign the object to the variable `calculator` since we aren't going to making several calculator objects. 
+
+<h4 id="encapsulation">
+  What is a useful side-effect of encapsulating the inner-workings of our programs?
+</h4>
+**Namespacing**, which helps us avoid naming collisions in our pgorams.
