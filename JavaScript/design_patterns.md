@@ -121,9 +121,10 @@ It is when you wrap a function in paraenthesis and immediately call the function
 <h4 id="modules-and-factories">
   How are Modules different from Factory Functions?
 </h4>
+
 The concepts are exactly the same, but instead of creating a factory that we re-use to create multiple objects, **module pattern** wraps the factory in an IIFE. 
 
-This is what the **module pattern** looks like: 
+This is what the module pattern looks like: 
 ```javascript
 const calculator = (() => {
   const add = (a, b) => a + b;
@@ -143,4 +144,5 @@ In our example above, the function inside the Immediately Invoked Function Expre
 <h4 id="encapsulation">
   What is a useful side-effect of encapsulating the inner-workings of our programs?
 </h4>
+
 **Namespacing** which helps us avoid naming collisions in our programs.
