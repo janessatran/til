@@ -10,7 +10,7 @@
 - [What is an Immediately Invoked Function Expression (IIFE)?](#IIFE)
 - [How are Modules different from Factory Functions?](#modules-and-factories)
 - [What is a useful side-effect of encapsulating the inner-workings of our programs?](#encapsulation)
-
+- [If you need one of something, should you use a factory or a module?](#module-or-factory)
 <h4 id="factory-functions">
   What is a factory function?
 </h4>
@@ -147,3 +147,9 @@ In our example above, the function inside the Immediately Invoked Function Expre
 </h4>
 
 **Namespacing** which helps us avoid naming collisions in our programs.
+
+<h4 id="module-or-factory">
+  If you need one of something, should you use a factory or a module?
+</h4>
+
+If you only need one of something, you should use a module. If you need multiple instances of that thing, use a factory.
