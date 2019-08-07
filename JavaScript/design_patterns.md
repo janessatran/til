@@ -14,6 +14,7 @@
 <h4 id="factory-functions">
   What is a factory function?
 </h4>
+
 When a function returns an object, we call it a **factory function**. For example:
 
 ```javascript
