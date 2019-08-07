@@ -3,7 +3,13 @@
 
 ## Questions/Topics Covered:
 - [What is a factory function?](#factory-functions)
-
+- [What is the scope of functions created inside a function?](#factory-functions-scope)
+- [What is closure?](#closures)
+- [In the context of Factory Functions, what do closures enable us to do?](#factory-functions-closures)
+- [How do we accomplish prototypal inheritance with factory functions?](#factory-functions-inheritance)
+- [What is an Immediately Invoked Function Expression (IIFE)?](#IIFE)
+- [How are Modules different from Factory Functions?](#modules-and-factories)
+- [What is a useful side-effect of encapsulating the inner-workings of our programs?](#encapsulation)
 
 <h4 id="factory-functions">
   What is a factory function?
@@ -137,4 +143,4 @@ In our example above, the function inside the Immediately Invoked Function Expre
 <h4 id="encapsulation">
   What is a useful side-effect of encapsulating the inner-workings of our programs?
 </h4>
-**Namespacing**, which helps us avoid naming collisions in our pgorams.
+**Namespacing** which helps us avoid naming collisions in our programs.
