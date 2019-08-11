@@ -90,6 +90,7 @@ user.sayHi();
 <h4 id="class-expression">
   What is a class expression?
 </h4>
+
 It is a way to define a class and assigning ito to an expression. They can be named or unnamed. If named, the name of the class is local to the class body only. Classes can be defined inside another expression, passed around, returned, assigned, etc.
 
 Example:
@@ -112,6 +113,7 @@ let User = class MyClass {
 new User.sayHi(); // works, show MyClass definition
 alert(MyClass); // error, MyClass isn't visisble outside the class
 ```
+
 It is also possible to make classes dynamically:
 ```javascript
 function makeClass(phrase) {
@@ -126,10 +128,12 @@ function makeClass(phrase) {
 // create new class
 let User = makeClass("hello");
 new User().sayHi(); // hello
-``
+```
+
 <h4 id="class-getters-setters">
   How would you create getters and setters in JavaScript classes?
 </h4>
+
 ```javascript
 class User {
 
@@ -138,7 +142,8 @@ class User {
   }
   
   get name() {
-    return this._name;
+    // We prefix the variable with an underscore so that we don't trigger an infinite loop
+    return this._name; 
   }
   
   set name(value) {
@@ -155,7 +160,6 @@ let user = new User("James");
 alert(user.name); // James
 
 user = new User(""); // name too short!
-
 ```
 
 <h4 id="class-properties">
