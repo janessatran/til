@@ -1,4 +1,4 @@
-# Classes and Modules (ES6)
+# Classes(ES6)
 
 ## Questions/Topics Covered:
 - [What does the basic class syntax look like? (Try to write it first on paper!!)](#class-syntax)
@@ -8,6 +8,10 @@
 - [What is a class expression?](#class-expression)
 - [How would you create getters and setters in JavaScript classes?](#class-getters-setters)
 - [(T/F): when creating class properties, it is placed into the prototype of the object.](#class-properties)
+- [What are static methods in classes?](#static-methods)
+- [What does the `extends` keyword do?](#extends)
+- [What are mix-ins?](#mixins)
+
 
 <h4 id="class-syntax">
   What does the basic class syntax look like?
@@ -212,4 +216,84 @@ class User {
 new User().sayHi();
 ```
 
+<h4 id="static-methods">
+  What are static methods in classes?
+</h4>
+The `static` keyword defines a static method for a class. They can be called without instantiating the class and **cannot** be called through a class instance. They are often used to create utility functions for an application.
 
+Example:
+```javascript
+class Point {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+  }
+
+  static distance(a, b) {
+    const dx = a.x - b.x;
+    const dy = a.y - b.y;
+
+    return Math.hypot(dx, dy);
+  }
+}
+
+const p1 = new Point(5, 5);
+const p2 = new Point(10, 10);
+
+console.log(Point.distance(p1, p2)); // 7.0710678118654755
+```
+<h4 id="extends">
+  What does the `extends` keyword do?
+</h4>
+The `extends` keyword is used in class declarations or class expressions to create a class as a child of another class.
+
+Example:
+```javascript
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+  
+  speak() {
+    console.log(`${this.name} makes a noise.`);
+  }
+}
+
+class Dog extends Animal {
+  // if there is a constructor in the subclass, 
+  // it needs to call super() before using "this".
+  constructor(name) {
+    super(name); // call the super class constructor and pass in the name parameter
+  }
+  
+  speak() {
+    console.log(`${this.name} barks.`);
+  }
+}
+
+let d = new Dog('Kody');
+d.speak(); // Kody barks.
+```
+
+<h4 id="mixins">
+  What are mix-ins?
+</h4>
+**Mix-ins**, or abstract subclasses, are templates for classes. An ECMAScript class can only have a single superclass, so multiple inheritance from tooling classes it not possible. The functioanlity must be provided by the superclass. 
+To implement mix-ins in ES6:
+1. Create a function with a superclass as input
+2. Get the subclass extending that superclass as output
+
+Example:
+```javascript
+let calculatorMixin = Base => class extends Base {
+  calc() {...}
+};
+
+let randomizerMixin = Base => class extends Base {
+  randomize() {...}
+};
+
+// The class using these mix-ins is written like this
+class Foo {}
+class Bar extends calculatorMixin(randomizerMixin(Foo)) {}
+```
