@@ -278,6 +278,7 @@ d.speak(); // Kody barks.
 <h4 id="mixins">
   What are mix-ins?
 </h4>
+
 **Mix-ins**, or abstract subclasses, are templates for classes. An ECMAScript class can only have a single superclass, so multiple inheritance from tooling classes it not possible. The functioanlity must be provided by the superclass. 
 To implement mix-ins in ES6:
 1. Create a function with a superclass as input
