@@ -1,9 +1,40 @@
 # Classes and Modules (ES6)
 
 ## Questions/Topics Covered:
+- [What does the basic class syntax look like? (Try to write it first on paper!!)(#class-syntax)
 - [What is a class in JavaScript?](#class)
 - [Why can't we just considered the `class` keyword to be syntactic sugar?](#class-syntactic-sugar)
 - [How would you re-write the User class using pure functions?](#class-prototype)
+- [What is a class expression?](#class-expression)
+- [How would you create getters and setters in JavaScript classes?](#class-getters-setters)
+- [(T/F): when creating class properties, it is placed into the prototype of the object.](#class-properties)
+
+<h4 id="class-syntax">
+  What does the basic class syntax look like?
+</h4>
+
+```javascript
+class MyClass {
+  prop = value; // property
+  
+  constructor(...) { // constructor
+    // ...
+  }
+  
+  method(...) {...} // method
+  
+  // getter
+  get something() {
+    return this._something;
+  }
+  
+  // setter
+  set something(val) {
+    this._something = val;
+  }
+}
+```
+`MyClass` is technically a function (the one we provide as `constructor`), while methods, getters, and setters are written to `MyClass.prototype`.
 
 <h4 id="class">
   What is a class in JavaScript?
@@ -142,7 +173,9 @@ class User {
   }
   
   get name() {
-    // We prefix the variable with an underscore so that we don't trigger an infinite loop
+    // We prefix the variable with an underscore so that 
+    // we don't trigger an infinite loop.
+    // The variable needs to have a different name that the getter/setter.
     return this._name; 
   }
   
@@ -178,3 +211,5 @@ class User {
 
 new User().sayHi();
 ```
+
+
