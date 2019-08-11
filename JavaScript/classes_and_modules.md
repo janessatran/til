@@ -1,7 +1,7 @@
 # Classes and Modules (ES6)
 
 ## Questions/Topics Covered:
-- [What does the basic class syntax look like? (Try to write it first on paper!!)(#class-syntax)
+- [What does the basic class syntax look like? (Try to write it first on paper!!)](#class-syntax)
 - [What is a class in JavaScript?](#class)
 - [Why can't we just considered the `class` keyword to be syntactic sugar?](#class-syntactic-sugar)
 - [How would you re-write the User class using pure functions?](#class-prototype)
