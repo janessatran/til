@@ -88,13 +88,13 @@ Closures allow us to create private variables and functions in the context of Fa
 We can pull out the function we want from another Object and assign it to our own Object. The advantages include being able to pick and choose which functions you want to include in your new object. For example:
 
 ```javascript
-const Human = (name) => {
+const Being = (name) => {
   const sayName = () => console.log(`my name is ${name}`)
   return {sayName}
 }
 
 const Dwarf = (name) => {
-  const {sayName} = Person(name)
+  const {sayName} = Being(name)
   const laugh = () => console.log('hahaha!')
   return { sayName, laugh }
 }
@@ -108,7 +108,7 @@ It is also possible to lump all of another object into your new object using `Ob
 
 ```javascript
 const Dwarf = (name) => {
-  const prototype = Person(name)
+  const prototype = Being(name)
   const laugh = () => console.log('hahaha!')
   return Object.assign({}, prototype, {laugh})
 }
