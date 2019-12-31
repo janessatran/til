@@ -35,3 +35,13 @@ To set it up:
       friendly_id :title, use: :slugged
     end
 ```
+A cool thing about using enums is you can call the attributes with a `?` and it will return `true` or `false`, for example:
+
+```ruby
+2.6.0 :002 > Blog.last.draft?
+  Blog Load (0.8ms)  SELECT  "blogs".* FROM "blogs" ORDER BY "blogs"."id" DESC LIMIT $1  [["LIMIT", 1]]
+ => false 
+2.6.0 :003 > Blog.last.published?
+  Blog Load (0.5ms)  SELECT  "blogs".* FROM "blogs" ORDER BY "blogs"."id" DESC LIMIT $1  [["LIMIT", 1]]
+ => true 
+ ```
