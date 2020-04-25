@@ -43,14 +43,72 @@ margin-right + border-right + padding-right + width + padding-left + border-left
 ```
 
 The total height of an element can be caluclated with the formula:
+
 ```
 margin-top + border-top + padding-top + height + padding-bottom + border-bottom + margin-bottom
 
 ```
 
-- you can set multiple properties for `margin` at once with
+You can set multiple properties for `margin` at once with
+
 ```
 div {
   margin: 10px 20px; // top bottom left right
 }
 ```
+
+## Borders
+Provide an outline around an element. Requires three values: `width`, `style`, and `color`.
+
+```
+div {
+  border: 6px solid black;
+}
+```
+
+## Box Sizing
+The box model can be changed to support different calculations beyond the additive design, using the `box-sizing` property. This allows us to change exactly how the box model works and how an element's size is calculated. The property accepts three primarily values: `content-box`, `padding-box`, and `border-box`.
+
+Generally speaking, the best `box-sizing` value to pick is `border-box` because it makes the math a lot easier. The main downside of using this property is that it's not supported by every browser. 
+
+### Content Box
+This is the default value, leaving the box model as an additive design. 
+- The size of an element begins with the width and height properties, and then any padding or margin property values are added from there.
+
+```
+ div {
+   -webkit-box-sizing: content-box;
+   -moz-box-sizing: content-box;
+    box-sizing: content-box;
+ }
+ ```
+The hyphens before the `box-sizing` property specify the vendor prefixes. The most common vendor prefixes are:
+- Mozilla Firefox, `-moz-`
+- Microsoft Internet Explorer: `-ms-`
+- Webkit (Google Chrome and Apple Safari): `-webkit-`
+
+### Padding Box
+The `padding-box` value alters the box model by including any `padding` property values within the `width` and `height` of an element. For example, when using the `padding-box` value, if an element has `width: 400px` and `padding: 20px`, the actual width will remain 400 pixels. As the `padding` increases, the content size within the element shrinks proportionately. 
+
+However, if we add a `border` or `margin` to it, these values *will* be added to the full box size. So an element with `width: 400px` and `border: 10px` would have a full width of 420 pixels (+10 pixels each side).  
+
+```
+div {
+  box-sizing: padding-box;
+}
+```
+**Note: padding-box is deprecated and shouldn't be used anymore**
+
+### Border Box
+The `border-box` value alters the box model so that any `border` or `padding` property values are included within the `width` and `height` of an element. For example, when using the `border-box` value, the following element has a total width of 400 pixels:
+
+```
+#my-element {
+  box-sizing: border-box;
+  width: 400px;
+  padding: 10px;
+  border: 10px;
+}
+```
+
+
