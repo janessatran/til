@@ -30,7 +30,10 @@ When the vertical margins of two elements are touching, the larger margin value 
 - `none` will completely hide an element and render the page as if it doesn't exist
 
 #### When are you required to specify the width of an element vs letting the browser figure it out for you?
+
 #### How do box shadows affect element box sizing?
+THey don't. The shadow isn't considered in the final width measuring of the element. 
+
 
 # Notes
 
